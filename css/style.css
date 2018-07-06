@@ -9,16 +9,49 @@ html {
   font-size: 62.5%; }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; }
 
 .container {
   display: flex;
-  height: 93vh; }
+  height: 92vh; }
 
 .top {
-  flex-basis: 100%;
+  display: flex;
   background-color: #7F60FD;
-  height: 7vh; }
+  height: 8vh; }
+  .top__left {
+    flex: 1;
+    font-size: 3.6rem;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .top__right {
+    flex: 5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; }
+
+.profile-div {
+  padding: 0rem 4rem; }
+
+.profile {
+  border-radius: 50%;
+  height: 4rem;
+  cursor: pointer; }
+
+.search {
+  width: 18rem;
+  border-radius: .3rem;
+  border: none;
+  font-size: 1.2rem;
+  background-image: url("../img/search.svg");
+  background-size: 1.3rem;
+  background-position: .8rem .8rem;
+  background-repeat: no-repeat;
+  padding: .8rem 2rem .8rem 2.8rem; }
 
 .side {
   display: flex;
@@ -26,10 +59,10 @@ body {
   flex: 1;
   background-color: #0D1321; }
   .side__user {
-    height: 23vh;
-    border-bottom: 2px solid #3A4049; }
+    height: 20vh;
+    border-bottom: 0.2rem solid #3A4049; }
   .side__nav {
-    height: 70vh; }
+    height: 72vh; }
 
 .main {
-  flex: 6; }
+  flex: 5; }

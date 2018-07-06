@@ -4,7 +4,9 @@ $color-secondary: #0D1321;
 $color-secondary-light: #3A4049;
 $color-grey: #B5B5B5;
 $color-grey-light: #F2F2F2;
-
+$color-white: #fff;
+//////////////////////
+// GENERAL
 
 *,
 *::after,
@@ -20,18 +22,68 @@ html {
 
 body {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
   display: flex;
-  height: 93vh;
+  height: 92vh;
 }
 
+
+//////////////////////
+// TOP BAR
+
 .top {
-  flex-basis: 100%;
+  display: flex;
   background-color: $color-primary;
-  height: 7vh;
+  height: 8vh;
+
+  &__left {
+    flex: 1;
+    font-size: 3.6rem;
+    font-weight: 500;
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+
+  &__right {
+    flex: 5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 }
+
+.profile-div {
+  padding: 0rem 4rem;
+}
+
+.profile {
+  border-radius: 50%;
+  height: 4rem;
+  cursor: pointer;
+}
+
+.search {
+  width: 18rem;
+  border-radius: .3rem;
+  border: none;
+  font-size: 1.2rem;
+  background-image: url('../img/search.svg');
+  background-size: 1.3rem;
+  background-position: .8rem .8rem;
+  background-repeat: no-repeat;
+  padding: .8rem 2rem .8rem 2.8rem;
+}
+
+
+
+
+//////////////////////
+// SIDEBAR
 
 .side {
   display: flex;
@@ -40,15 +92,19 @@ body {
   background-color: $color-secondary;
 
   &__user {
-    height: 23vh;
-    border-bottom: 2px solid $color-secondary-light;
+    height: 20vh;
+    border-bottom: .2rem solid $color-secondary-light;
   }
 
   &__nav {
-    height: 70vh;
+    height: 72vh;
   }
 }
 
+
+//////////////////////
+// MAIN
+
 .main {
-  flex: 6;
+  flex: 5;
 }

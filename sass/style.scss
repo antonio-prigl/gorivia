@@ -1,0 +1,54 @@
+$color-primary: #7F60FD;
+$color-primary-dark: #3C39D8;
+$color-secondary: #0D1321;
+$color-secondary-light: #3A4049;
+$color-grey: #B5B5B5;
+$color-grey-light: #F2F2F2;
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  height: 93vh;
+}
+
+.top {
+  flex-basis: 100%;
+  background-color: $color-primary;
+  height: 7vh;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: $color-secondary;
+
+  &__user {
+    height: 23vh;
+    border-bottom: 2px solid $color-secondary-light;
+  }
+
+  &__nav {
+    height: 70vh;
+  }
+}
+
+.main {
+  flex: 6;
+}

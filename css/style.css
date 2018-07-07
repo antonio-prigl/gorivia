@@ -157,4 +157,28 @@ a {
   height: 8rem; }
 
 .main {
-  flex: 5; }
+  flex: 5;
+  margin: 4rem;
+  display: flex;
+  flex-direction: column; }
+  .main__top {
+    display: flex;
+    height: 6rem;
+    padding-bottom: 2rem; }
+    .main__top .dropdown {
+      display: flex;
+      flex: 2;
+      background-color: yellow;
+      align-items: center; }
+      .main__top .dropdown__box {
+        flex: 1; }
+    .main__top .button {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      background-color: red; }
+      .main__top .button__box {
+        flex: 1; }
+  .main__table {
+    background-color: blue;
+    flex: 1; }

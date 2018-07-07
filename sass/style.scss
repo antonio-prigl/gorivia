@@ -211,4 +211,41 @@ a {
 
 .main {
   flex: 5;
+  margin: 4rem;
+  display: flex;
+  flex-direction: column;
+
+  &__top {
+    display: flex;
+    height: 6rem;
+    padding-bottom: 2rem;
+
+    .dropdown {
+      display: flex;
+      flex: 2;
+      background-color: yellow;
+      align-items: center;
+
+      &__box {
+        flex: 1;
+      }
+    }
+
+    .button {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      background-color: red;
+
+      &__box {
+          flex: 1;
+      }
+    }
+  }
+
+  &__table {
+    background-color: blue;
+    flex: 1;
+
+  }
 }

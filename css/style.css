@@ -12,6 +12,10 @@ body {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif; }
 
+a {
+  text-decoration: none;
+  color: #B5B5B5; }
+
 .container {
   display: flex;
   height: 92vh; }
@@ -32,12 +36,13 @@ body {
     flex: 5;
     display: flex;
     align-items: center;
+    justify-content: center;
     justify-content: flex-end; }
 
 .profile-div {
   padding: 0rem 4rem; }
 
-.profile {
+.profile--top {
   border-radius: 50%;
   height: 4rem;
   cursor: pointer; }
@@ -59,10 +64,97 @@ body {
   flex: 1;
   background-color: #0D1321; }
   .side__user {
-    height: 20vh;
-    border-bottom: 0.2rem solid #3A4049; }
+    height: 15vh;
+    border-bottom: 0.3rem solid #3A4049;
+    display: flex;
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 2.5rem; }
+    .side__user-left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .side__user-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-content: flex-start; }
   .side__nav {
-    height: 72vh; }
+    height: 77vh; }
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  font-weight: 400; }
+  .nav__item {
+    height: 6.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: flex-start;
+    transition: background-color .2s; }
+    .nav__item--active {
+      height: 6.5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-content: inherit;
+      background-color: #7F60FD;
+      color: #fff; }
+  .nav__item:hover {
+    background-color: #3A4049; }
+  .nav__home {
+    background-image: url("../img/home.svg");
+    background-size: 2rem;
+    background-repeat: no-repeat;
+    background-position: 3rem 0rem;
+    padding: 0rem 6rem; }
+    .nav__home--active {
+      background-image: url("../img/home-active.svg");
+      background-size: 2rem;
+      background-repeat: no-repeat;
+      background-position: 3rem 0rem;
+      padding: 0rem 6rem; }
+  .nav__list {
+    background-image: url("../img/list.svg");
+    background-size: 2rem;
+    background-repeat: no-repeat;
+    background-position: 3rem 0rem;
+    padding: 0rem 6rem; }
+    .nav__list--active {
+      background-image: url("../img/list-active.svg"); }
+  .nav__admin {
+    background-image: url("../img/edit.svg");
+    background-size: 2rem;
+    background-repeat: no-repeat;
+    background-position: 3rem 0rem;
+    padding: 0rem 6rem; }
+    .nav__admin--active {
+      background-image: url("../img/edit-active.svg");
+      background-size: 2rem;
+      background-repeat: no-repeat;
+      background-position: 3rem 0rem;
+      padding: 0rem 6rem; }
+  .nav__profile {
+    background-image: url("../img/user.svg");
+    background-size: 2rem;
+    background-repeat: no-repeat;
+    background-position: 3rem 0rem;
+    padding: 0rem 6rem; }
+    .nav__profile--active {
+      background-image: url("../img/user--active.svg");
+      background-size: 2rem;
+      background-repeat: no-repeat;
+      background-position: 3rem 0rem;
+      padding: 0rem 6rem; }
+
+.profile--side {
+  border-radius: 50%;
+  height: 8rem; }
 
 .main {
   flex: 5; }

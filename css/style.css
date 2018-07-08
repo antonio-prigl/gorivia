@@ -5,12 +5,28 @@
   padding: 0;
   box-sizing: inherit; }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type=submit] {
+  padding: .5rem 1rem;
+  background: #fff;
+  border: 0.1rem solid #B5B5B5;
+  cursor: pointer;
+  -webkit-border-radius: .2rem;
+  border-radius: .2rem; }
+
 html {
   font-size: 62.5%; }
 
 body {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif; }
+
+ul {
+  list-style: none; }
 
 a {
   text-decoration: none;
@@ -23,7 +39,7 @@ a {
 .top {
   display: flex;
   background-color: #7F60FD;
-  height: 8vh; }
+  height: 7rem; }
   .top__left {
     flex: 1;
     font-size: 3.6rem;
@@ -64,26 +80,26 @@ a {
   flex: 1;
   background-color: #0D1321; }
   .side__user {
-    height: 15vh;
     border-bottom: 0.3rem solid #3A4049;
     display: flex;
     color: #fff;
     font-size: 2.4rem;
     font-weight: 300;
-    line-height: 2.5rem; }
+    line-height: 2.5rem;
+    min-height: 13rem; }
     .side__user-left {
       flex: 1;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      max-height: 13rem; }
     .side__user-right {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      justify-content: flex-start; }
-  .side__nav {
-    height: 77vh; }
+      justify-content: flex-start;
+      max-height: 13rem; }
 
 .nav {
   display: flex;
@@ -91,14 +107,14 @@ a {
   font-size: 1.6rem;
   font-weight: 400; }
   .nav__item {
-    height: 6.5vh;
+    height: 6rem;
     display: flex;
     align-items: center;
     justify-content: center;
     justify-content: flex-start;
     transition: background-color .2s; }
     .nav__item--active {
-      height: 6.5vh;
+      height: 6rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -165,20 +181,100 @@ a {
     display: flex;
     height: 6rem;
     padding-bottom: 2rem; }
-    .main__top .dropdown {
+    .main__top .dropdowns {
       display: flex;
-      flex: 2;
-      background-color: yellow;
-      align-items: center; }
-      .main__top .dropdown__box {
+      flex: 3; }
+      .main__top .dropdowns__box {
         flex: 1; }
-    .main__top .button {
+    .main__top .buttons {
       display: flex;
-      flex: 1;
-      align-items: center;
-      background-color: red; }
-      .main__top .button__box {
+      flex: 2; }
+      .main__top .buttons__box {
         flex: 1; }
+        .main__top .buttons__box .btn {
+          background-color: #7F60FD;
+          border: none;
+          color: white;
+          padding: .9rem 1rem;
+          font-size: 1.6rem;
+          font-weight: 400;
+          cursor: pointer;
+          display: flex;
+          border-radius: .3rem;
+          width: 90%; }
+        .main__top .buttons__box .btn:hover {
+          background-color: #3C39D8; }
+        .main__top .buttons__box .plus {
+          width: 1.6rem;
+          margin-right: .8rem; }
   .main__table {
-    background-color: blue;
+    background-color: #7F60FD;
     flex: 1; }
+
+.dropdown {
+  position: relative; }
+  .dropdown__items {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12rem;
+    z-index: 1000; }
+  .dropdown__item {
+    background: #f6f6f6;
+    color: #000;
+    border-bottom: .1rem solid #ccc; }
+  .dropdown__link {
+    display: block;
+    color: #000 !important;
+    background: #fff !important; }
+    .dropdown__link:hover {
+      display: block;
+      background: #F2F2F2 !important; }
+  .dropdown__drop {
+    font-weight: bold;
+    float: left;
+    width: 12rem;
+    position: relative;
+    background: #fff;
+    border: 0.1rem solid #B5B5B5; }
+    .dropdown__drop__link {
+      position: relative; }
+      .dropdown__drop__link:after {
+        content: "";
+        position: absolute;
+        right: 1rem;
+        top: 45%;
+        border-left: .5rem solid transparent;
+        border-top: .5rem solid;
+        border-right: .5rem solid transparent;
+        z-index: 999; }
+      .dropdown__drop__link:hover:after {
+        content: "";
+        border-left: .5rem solid transparent;
+        border-right: .5rem solid transparent; }
+
+.edit {
+  display: block;
+  padding: .8rem 1rem;
+  color: #000;
+  position: relative;
+  z-index: 2000;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.6rem; }
+  .edit:hover, .edit.hover {
+    background: #F2F2F2;
+    position: relative; }
+
+.range {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.input {
+  width: 4.2rem;
+  padding: .8rem 1rem; }
+
+.submit-box {
+  margin-top: .5rem; }

@@ -30,6 +30,21 @@ $color-white: #fff;
   box-sizing: inherit;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=submit] {
+    padding: .5rem 1rem;
+    background: $color-white;
+    border: .1rem solid $color-grey;
+    cursor: pointer;
+    -webkit-border-radius: .2rem;
+    border-radius: .2rem;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -37,6 +52,10 @@ html {
 body {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
@@ -56,7 +75,7 @@ a {
 .top {
   display: flex;
   background-color: $color-primary;
-  height: 8vh;
+  height: 7rem;
 
   &__left {
     flex: 1;
@@ -108,29 +127,28 @@ a {
   background-color: $color-secondary;
 
   &__user {
-    height: 15vh;
     border-bottom: .3rem solid $color-secondary-light;
     display: flex;
     color: $color-white;
     font-size: 2.4rem;
     font-weight: 300;
     line-height: 2.5rem;
+    min-height: 13rem;
 
     &-left {
       flex: 1;
       @include flex;
+      max-height: 13rem;
     }
 
     &-right {
       flex: 1;
       @include flex;
       justify-content: flex-start;
+      max-height: 13rem;
     }
   }
 
-  &__nav {
-    height: 77vh;
-  }
 }
 
 .nav {
@@ -140,13 +158,13 @@ a {
   font-weight: 400;
 
   &__item {
-    height: 6.5vh;
+    height: 6rem;
     @include flex;
     justify-content: flex-start;
     transition: background-color .2s;
 
     &--active {
-      height: 6.5vh;
+      height: 6rem;
       @include flex;
       justify-content: inherit;
       background-color: $color-primary;
@@ -220,32 +238,148 @@ a {
     height: 6rem;
     padding-bottom: 2rem;
 
-    .dropdown {
+    .dropdowns {
       display: flex;
-      flex: 2;
-      background-color: yellow;
-      align-items: center;
+      flex: 3;
 
       &__box {
         flex: 1;
       }
     }
 
-    .button {
+    .buttons {
       display: flex;
-      flex: 1;
-      align-items: center;
-      background-color: red;
+      flex: 2;
 
       &__box {
           flex: 1;
+
+          .btn {
+              background-color: $color-primary;
+              border: none;
+              color: white;
+              padding: .9rem 1rem;
+              font-size: 1.6rem;
+              font-weight: 400;
+              cursor: pointer;
+              display: flex;
+              border-radius: .3rem;
+              width: 90%;
+          }
+
+          .btn:hover {
+              background-color: $color-primary-dark;
+          }
+
+          .plus {
+            width: 1.6rem;
+            margin-right: .8rem;
+          }
       }
     }
   }
 
   &__table {
-    background-color: blue;
+    background-color: $color-primary;
     flex: 1;
-
   }
+}
+
+
+//////////////////////
+// DROPDOWN
+
+.dropdown{
+  position: relative;
+
+  &__items {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12rem;
+    z-index: 1000;
+  }
+
+  &__item {
+    background: #f6f6f6;
+    color: #000;
+    border-bottom: .1rem solid #ccc;
+  }
+
+  &__link {
+    display: block;
+    color: #000 !important;
+    background: #fff !important;
+
+    &:hover {
+      display: block;
+      background: $color-grey-light !important;
+    }
+  }
+
+  &__drop {
+    font-weight: bold;
+    float: left;
+    width: 12rem;
+    position: relative;
+    background: $color-white;
+    border: .1rem solid $color-grey;
+
+    &__link {
+      position: relative;
+
+      // ARROW
+
+      &:after {
+        content:"";
+        position: absolute;
+        right: 1rem;
+        top: 45%;
+        border-left: .5rem solid transparent;
+        border-top: .5rem solid;
+        border-right: .5rem solid transparent;
+        z-index: 999;
+      }
+
+      &:hover:after{
+        content:"";
+        border-left: .5rem solid transparent;
+        border-right: .5rem solid transparent;
+      }
+    }
+  }
+}
+
+
+.edit {
+  display: block;
+  padding: .8rem 1rem;
+  color: #000;
+  position: relative;
+  z-index: 2000;
+
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.6rem;
+
+  &:hover, &.hover {
+    background: $color-grey-light;
+    position: relative;
+  }
+}
+
+.range {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  width: 4.2rem;
+  padding: .8rem 1rem;
+}
+
+.submit-box {
+  margin-top: .5rem;
 }

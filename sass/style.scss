@@ -4,6 +4,7 @@ $color-secondary: #0D1321;
 $color-secondary-light: #3A4049;
 $color-grey: #B5B5B5;
 $color-grey-light: #F2F2F2;
+$color-grey-dark: #727272;
 $color-white: #fff;
 
 @mixin flex {
@@ -52,6 +53,7 @@ html {
 body {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  height: 100%;
 }
 
 ul {
@@ -65,7 +67,6 @@ a {
 
 .container {
   display: flex;
-  height: 92vh;
 }
 
 
@@ -125,6 +126,8 @@ a {
   flex-direction: column;
   flex: 1;
   background-color: $color-secondary;
+  height: 90rem;
+
 
   &__user {
     border-bottom: .3rem solid $color-secondary-light;
@@ -148,6 +151,7 @@ a {
       max-height: 13rem;
     }
   }
+
 
 }
 
@@ -235,53 +239,101 @@ a {
 
   &__top {
     display: flex;
-    height: 6rem;
     padding-bottom: 2rem;
+    min-height: 5rem;
+  }
+}
 
-    .dropdowns {
-      display: flex;
-      flex: 3;
 
-      &__box {
-        flex: 1;
+//////////////////////
+// DROPDOWNS SECTION
+
+.dropdowns {
+  display: flex;
+  flex: 3;
+
+  &__box {
+    flex: 1;
+  }
+}
+
+//////////////////////
+// BUTTONS SECTION
+
+.buttons {
+  display: flex;
+  flex: 2;
+
+  &__box {
+      flex: 1;
+
+      .btn {
+          background-color: $color-primary;
+          border: none;
+          color: white;
+          padding: .9rem 1rem;
+          font-size: 1.6rem;
+          font-weight: 400;
+          cursor: pointer;
+          display: flex;
+          border-radius: .3rem;
+          width: 90%;
+          transition: background-color .2s;
       }
-    }
 
-    .buttons {
-      display: flex;
-      flex: 2;
-
-      &__box {
-          flex: 1;
-
-          .btn {
-              background-color: $color-primary;
-              border: none;
-              color: white;
-              padding: .9rem 1rem;
-              font-size: 1.6rem;
-              font-weight: 400;
-              cursor: pointer;
-              display: flex;
-              border-radius: .3rem;
-              width: 90%;
-          }
-
-          .btn:hover {
-              background-color: $color-primary-dark;
-          }
-
-          .plus {
-            width: 1.6rem;
-            margin-right: .8rem;
-          }
+      .btn:hover {
+          background-color: $color-primary-dark;
       }
+
+      .plus {
+        width: 1.6rem;
+        margin-right: .8rem;
+      }
+  }
+}
+
+
+//////////////////////
+// TABLE
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1.6rem;
+
+  tr {
+    & + tr {
+      margin-top: 1.5em;
     }
   }
 
-  &__table {
-    background-color: $color-primary;
-    flex: 1;
+  th {
+    background-color: #eee;
+    font-weight: bold;
+    border: .1rem solid $color-grey;
+    line-height: 1.5;
+    height: 3.5rem;
+    width: 10rem;
+    text-align: center;
+    color: $color-white;
+    background-color: $color-secondary;
+    font-weight: 500;
+  }
+
+  .short {
+    width: 5rem;
+    background-color: $color-grey-dark;
+  }
+
+  .svg {
+    width: 1.8rem;
+  }
+
+  td {
+    border: .1rem solid $color-grey;
+    height: 3.5rem;
+    text-align: center;
+    font-weight: 400;
   }
 }
 
@@ -289,7 +341,7 @@ a {
 //////////////////////
 // DROPDOWN
 
-.dropdown{
+.dropdown {
   position: relative;
 
   &__items {
@@ -350,7 +402,6 @@ a {
     }
   }
 }
-
 
 .edit {
   display: block;

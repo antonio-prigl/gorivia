@@ -1,4 +1,4 @@
-var maxHeight = 200;
+var maxHeight = 170;
 
 $(function(){
 

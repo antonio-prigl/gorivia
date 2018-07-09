@@ -49,11 +49,12 @@ a {
     align-items: center;
     justify-content: center; }
   .top__right {
-    flex: 5;
+    flex: 4;
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-content: flex-end; }
+    justify-content: flex-end;
+    margin-left: 8rem; }
 
 .profile-div {
   padding: 0rem 4rem; }
@@ -174,26 +175,59 @@ a {
   height: 8rem; }
 
 .main {
-  flex: 5;
+  flex: 4;
   margin: 4rem;
   display: flex;
   flex-direction: column; }
   .main__top {
     display: flex;
-    padding-bottom: 2rem;
     min-height: 5rem; }
+  .main__pag {
+    display: flex;
+    margin-top: 2.5rem;
+    justify-content: center; }
+    .main__pag a {
+      color: black;
+      padding: .6rem 1.2rem;
+      text-decoration: none;
+      border: 0.1rem solid #B5B5B5;
+      margin: 0 .6rem;
+      font-size: 1.6rem;
+      font-weight: 400;
+      transition: border-color .2s; }
+      .main__pag a.active {
+        background-color: #7F60FD;
+        color: #fff; }
+      .main__pag a:hover:not(.active) {
+        border-color: #7F60FD; }
+    .main__pag .arrow-left {
+      background-image: url("../img/chevron-left.svg");
+      padding: .6rem 1.6rem;
+      background-size: .8rem;
+      background-position: 1.2rem .85rem;
+      background-repeat: no-repeat; }
+    .main__pag .arrow-right {
+      background-image: url("../img/chevron-right.svg");
+      padding: .6rem 1.6rem;
+      background-size: .8rem;
+      background-position: 1.2rem .85rem;
+      background-repeat: no-repeat; }
 
 .dropdowns {
   display: flex;
   flex: 3; }
   .dropdowns__box {
-    flex: 1; }
+    flex: 1;
+    position: relative; }
 
 .buttons {
   display: flex;
   flex: 2; }
   .buttons__box {
-    flex: 1; }
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    position: relative; }
     .buttons__box .btn {
       background-color: #7F60FD;
       border: none;
@@ -205,7 +239,8 @@ a {
       display: flex;
       border-radius: .3rem;
       width: 90%;
-      transition: background-color .2s; }
+      transition: background-color .2s;
+      position: absolute; }
     .buttons__box .btn:hover {
       background-color: #3C39D8; }
     .buttons__box .plus {
@@ -233,7 +268,8 @@ table {
     width: 5rem;
     background-color: #727272; }
   table .svg {
-    width: 1.8rem; }
+    width: 1.8rem;
+    cursor: pointer; }
   table td {
     border: 0.1rem solid #B5B5B5;
     height: 3.5rem;
@@ -241,7 +277,7 @@ table {
     font-weight: 400; }
 
 .dropdown {
-  position: relative; }
+  position: absolute; }
   .dropdown__items {
     display: none;
     position: absolute;

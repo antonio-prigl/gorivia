@@ -1,3 +1,5 @@
+//////////////////////
+// COLORS
 $color-primary: #7F60FD;
 $color-primary-dark: #3C39D8;
 $color-secondary: #0D1321;
@@ -7,6 +9,18 @@ $color-grey-light: #F2F2F2;
 $color-grey-dark: #727272;
 $color-white: #fff;
 
+
+//////////////////////
+// RESPONSIVE
+$desktop-lg: 100em; // 1500px
+$tablet-land-lg: 80em; // 1280px
+$tablet-land-sm: 60.625em; // 970px
+$tablet-port: 48em; // 768px
+$mobile: 25em; // 400px
+
+
+//////////////////////
+// MIXINS
 @mixin flex {
   display: flex;
   align-items: center;
@@ -25,6 +39,17 @@ $color-white: #fff;
   background-size: .8rem;
   background-position: 1.2rem .85rem;
   background-repeat: no-repeat;
+}
+
+@mixin table {
+  font-weight: 500;
+  background-color: $color-secondary;
+  color: $color-white;
+  padding: .7rem 0rem;
+  width: 50%;
+  border-right: .1rem solid $color-grey;
+  margin-top: -.6rem;
+  margin-left: -.6rem;
 }
 
 //////////////////////
@@ -74,6 +99,10 @@ a {
 
 .container {
   display: flex;
+
+  @media only screen and (max-width: $tablet-land-lg) {
+    display: block;
+  }
 }
 
 
@@ -91,6 +120,11 @@ a {
     font-weight: 500;
     color: $color-white;
     @include flex;
+
+    @media only screen and (max-width: $tablet-land-lg) {
+      justify-content: flex-start;
+      margin-left: 2.5rem;
+    }
   }
 
   &__right {
@@ -98,6 +132,14 @@ a {
     @include flex;
     justify-content: flex-end;
     margin-left: 8rem;
+
+    @media only screen and (min-width: $desktop-lg) {
+      flex: 5;
+    }
+
+    @media only screen and (max-width: $tablet-land-lg) {
+      margin-left: 0rem;
+    }
   }
 }
 
@@ -109,6 +151,10 @@ a {
   border-radius: 50%;
   height: 4rem;
   cursor: pointer;
+
+  @media only screen and (max-width: $tablet-land-lg) {
+    display: none;
+  }
 }
 
 .search {
@@ -121,6 +167,10 @@ a {
   background-position: .8rem .8rem;
   background-repeat: no-repeat;
   padding: .8rem 2rem .8rem 2.8rem;
+
+  @media only screen and (max-width: $tablet-port) {
+    display: none;
+  }
 }
 
 
@@ -134,8 +184,11 @@ a {
   flex-direction: column;
   flex: 1;
   background-color: $color-secondary;
-  height: 90rem;
+  height: 100vh;
 
+  @media only screen and (max-width: $tablet-land-lg) {
+    height: auto;
+  }
 
   &__user {
     border-bottom: .3rem solid $color-secondary-light;
@@ -145,6 +198,10 @@ a {
     font-weight: 300;
     line-height: 2.5rem;
     min-height: 13rem;
+
+    @media only screen and (max-width: $tablet-land-lg) {
+      display: none;
+    }
 
     &-left {
       flex: 1;
@@ -159,15 +216,30 @@ a {
       max-height: 13rem;
     }
   }
-
-
 }
 
 .nav {
-  display: flex;
-  flex-direction: column;
   font-size: 1.6rem;
   font-weight: 400;
+
+  @media only screen and (max-width: $tablet-land-lg) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .navi {
+      flex: 1;
+    }
+  }
+
+
+  @media only screen and (max-width: $tablet-port) {
+    flex-wrap: wrap;
+
+    .navi {
+      min-width: 28rem;
+    }
+  }
 
   &__item {
     height: 6rem;
@@ -245,10 +317,33 @@ a {
   display: flex;
   flex-direction: column;
 
+  @media only screen and (min-width: $desktop-lg) {
+    flex: 5;
+  }
+
+  @media only screen and (max-width: $tablet-land-lg) {
+    margin: 2rem;
+  }
+
   &__top {
     display: flex;
     min-height: 5rem;
+
+    @media only screen and (max-width: $tablet-land-sm) {
+      flex-direction: column;
+      min-height: 10rem;
+      margin-bottom: 1rem;
+    }
+
+    @media only screen and (max-width: $tablet-land-sm) {
+      margin-bottom: 2rem;
+    }
+
+    @media only screen and (max-width: 576px) {
+      display: none;
+    }
   }
+
 
 
   ///////////////////////
@@ -303,6 +398,10 @@ a {
     flex: 1;
     position: relative;
   }
+
+  @media only screen and (min-width: $desktop-lg) {
+    padding-right: 25rem;
+  }
 }
 
 //////////////////////
@@ -312,19 +411,22 @@ a {
   display: flex;
   flex: 2;
 
-
   &__box {
       display: flex;
       flex: 1;
       justify-content: flex-end;
       position: relative;
 
+      @media only screen and (max-width: $tablet-land-sm) {
+        justify-content: center;
+      }
+
 
       .btn {
           background-color: $color-primary;
           border: none;
           color: white;
-          padding: .9rem 1rem;
+          padding: 1rem 1rem;
           font-size: 1.6rem;
           font-weight: 400;
           cursor: pointer;
@@ -333,6 +435,11 @@ a {
           width: 90%;
           transition: background-color .2s;
           position: absolute;
+
+          @media only screen and (max-width: $tablet-land-sm) {
+            width: 20rem;
+            padding: 1.5rem 1.5rem;
+          }
       }
 
       .btn:hover {
@@ -393,11 +500,80 @@ table {
 }
 
 
+
+// TABLE RESPONSIVE
+
+@media only screen and (max-width: $tablet-port) {
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr {
+
+  }
+
+	td {
+		border: none;
+		position: relative;
+		padding-left: 50%;
+    padding-top: .6rem;
+    margin-bottom: -.1rem;
+    font-weight: 400;
+	}
+
+	td:before {
+		position: absolute;
+		top: .6rem;
+		left: .6rem;
+		width: 45%;
+		padding-right: 1rem;
+		white-space: nowrap;
+	}
+
+
+	td:nth-of-type(1):before {
+    content: "Mjesto";
+    @include table;
+  }
+	td:nth-of-type(2):before {
+    content: "Benzinska";
+    @include table;
+  }
+	td:nth-of-type(3):before {
+    content: "Gorivo";
+    @include table;
+  }
+	td:nth-of-type(4):before {
+    content: "Cijena";
+    @include table;
+  }
+	td:nth-of-type(5):before {
+    content: "Uredi";
+    @include table;
+  }
+	td:nth-of-type(6):before {
+    content: "Izbriši";
+    @include table;
+  }
+}
+
+
+
 //////////////////////
 // DROPDOWN
 
 .dropdown {
   position: absolute;
+
+  @media only screen and (max-width: $tablet-land-sm) {
+    display: none;
+  }
 
   &__items {
     display: none;

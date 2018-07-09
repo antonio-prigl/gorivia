@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::after,
 *::before {
@@ -35,6 +36,9 @@ a {
 
 .container {
   display: flex; }
+  @media only screen and (max-width: 80em) {
+    .container {
+      display: block; } }
 
 .top {
   display: flex;
@@ -48,6 +52,10 @@ a {
     display: flex;
     align-items: center;
     justify-content: center; }
+    @media only screen and (max-width: 80em) {
+      .top__left {
+        justify-content: flex-start;
+        margin-left: 2.5rem; } }
   .top__right {
     flex: 4;
     display: flex;
@@ -55,6 +63,12 @@ a {
     justify-content: center;
     justify-content: flex-end;
     margin-left: 8rem; }
+    @media only screen and (min-width: 100em) {
+      .top__right {
+        flex: 5; } }
+    @media only screen and (max-width: 80em) {
+      .top__right {
+        margin-left: 0rem; } }
 
 .profile-div {
   padding: 0rem 4rem; }
@@ -63,6 +77,9 @@ a {
   border-radius: 50%;
   height: 4rem;
   cursor: pointer; }
+  @media only screen and (max-width: 80em) {
+    .profile--top {
+      display: none; } }
 
 .search {
   width: 18rem;
@@ -74,13 +91,19 @@ a {
   background-position: .8rem .8rem;
   background-repeat: no-repeat;
   padding: .8rem 2rem .8rem 2.8rem; }
+  @media only screen and (max-width: 48em) {
+    .search {
+      display: none; } }
 
 .side {
   display: flex;
   flex-direction: column;
   flex: 1;
   background-color: #0D1321;
-  height: 90rem; }
+  height: 100vh; }
+  @media only screen and (max-width: 80em) {
+    .side {
+      height: auto; } }
   .side__user {
     border-bottom: 0.3rem solid #3A4049;
     display: flex;
@@ -89,6 +112,9 @@ a {
     font-weight: 300;
     line-height: 2.5rem;
     min-height: 13rem; }
+    @media only screen and (max-width: 80em) {
+      .side__user {
+        display: none; } }
     .side__user-left {
       flex: 1;
       display: flex;
@@ -104,10 +130,20 @@ a {
       max-height: 13rem; }
 
 .nav {
-  display: flex;
-  flex-direction: column;
   font-size: 1.6rem;
   font-weight: 400; }
+  @media only screen and (max-width: 80em) {
+    .nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+      .nav .navi {
+        flex: 1; } }
+  @media only screen and (max-width: 48em) {
+    .nav {
+      flex-wrap: wrap; }
+      .nav .navi {
+        min-width: 28rem; } }
   .nav__item {
     height: 6rem;
     display: flex;
@@ -179,9 +215,26 @@ a {
   margin: 4rem;
   display: flex;
   flex-direction: column; }
+  @media only screen and (min-width: 100em) {
+    .main {
+      flex: 5; } }
+  @media only screen and (max-width: 80em) {
+    .main {
+      margin: 2rem; } }
   .main__top {
     display: flex;
     min-height: 5rem; }
+    @media only screen and (max-width: 60.625em) {
+      .main__top {
+        flex-direction: column;
+        min-height: 10rem;
+        margin-bottom: 1rem; } }
+    @media only screen and (max-width: 60.625em) {
+      .main__top {
+        margin-bottom: 2rem; } }
+    @media only screen and (max-width: 576px) {
+      .main__top {
+        display: none; } }
   .main__pag {
     display: flex;
     margin-top: 2.5rem;
@@ -219,6 +272,9 @@ a {
   .dropdowns__box {
     flex: 1;
     position: relative; }
+  @media only screen and (min-width: 100em) {
+    .dropdowns {
+      padding-right: 25rem; } }
 
 .buttons {
   display: flex;
@@ -228,11 +284,14 @@ a {
     flex: 1;
     justify-content: flex-end;
     position: relative; }
+    @media only screen and (max-width: 60.625em) {
+      .buttons__box {
+        justify-content: center; } }
     .buttons__box .btn {
       background-color: #7F60FD;
       border: none;
       color: white;
-      padding: .9rem 1rem;
+      padding: 1rem 1rem;
       font-size: 1.6rem;
       font-weight: 400;
       cursor: pointer;
@@ -241,6 +300,10 @@ a {
       width: 90%;
       transition: background-color .2s;
       position: absolute; }
+      @media only screen and (max-width: 60.625em) {
+        .buttons__box .btn {
+          width: 20rem;
+          padding: 1.5rem 1.5rem; } }
     .buttons__box .btn:hover {
       background-color: #3C39D8; }
     .buttons__box .plus {
@@ -276,8 +339,93 @@ table {
     text-align: center;
     font-weight: 400; }
 
+@media only screen and (max-width: 48em) {
+  table, thead, tbody, th, td, tr {
+    display: block; }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; }
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    padding-top: .6rem;
+    margin-bottom: -.1rem;
+    font-weight: 400; }
+  td:before {
+    position: absolute;
+    top: .6rem;
+    left: .6rem;
+    width: 45%;
+    padding-right: 1rem;
+    white-space: nowrap; }
+  td:nth-of-type(1):before {
+    content: "Mjesto";
+    font-weight: 500;
+    background-color: #0D1321;
+    color: #fff;
+    padding: .7rem 0rem;
+    width: 50%;
+    border-right: 0.1rem solid #B5B5B5;
+    margin-top: -.6rem;
+    margin-left: -.6rem; }
+  td:nth-of-type(2):before {
+    content: "Benzinska";
+    font-weight: 500;
+    background-color: #0D1321;
+    color: #fff;
+    padding: .7rem 0rem;
+    width: 50%;
+    border-right: 0.1rem solid #B5B5B5;
+    margin-top: -.6rem;
+    margin-left: -.6rem; }
+  td:nth-of-type(3):before {
+    content: "Gorivo";
+    font-weight: 500;
+    background-color: #0D1321;
+    color: #fff;
+    padding: .7rem 0rem;
+    width: 50%;
+    border-right: 0.1rem solid #B5B5B5;
+    margin-top: -.6rem;
+    margin-left: -.6rem; }
+  td:nth-of-type(4):before {
+    content: "Cijena";
+    font-weight: 500;
+    background-color: #0D1321;
+    color: #fff;
+    padding: .7rem 0rem;
+    width: 50%;
+    border-right: 0.1rem solid #B5B5B5;
+    margin-top: -.6rem;
+    margin-left: -.6rem; }
+  td:nth-of-type(5):before {
+    content: "Uredi";
+    font-weight: 500;
+    background-color: #0D1321;
+    color: #fff;
+    padding: .7rem 0rem;
+    width: 50%;
+    border-right: 0.1rem solid #B5B5B5;
+    margin-top: -.6rem;
+    margin-left: -.6rem; }
+  td:nth-of-type(6):before {
+    content: "Izbriši";
+    font-weight: 500;
+    background-color: #0D1321;
+    color: #fff;
+    padding: .7rem 0rem;
+    width: 50%;
+    border-right: 0.1rem solid #B5B5B5;
+    margin-top: -.6rem;
+    margin-left: -.6rem; } }
+
 .dropdown {
   position: absolute; }
+  @media only screen and (max-width: 60.625em) {
+    .dropdown {
+      display: none; } }
   .dropdown__items {
     display: none;
     position: absolute;

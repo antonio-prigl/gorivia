@@ -401,11 +401,6 @@ a {
   display: flex;
   flex: 3;
 
-  &__box {
-    flex: 1;
-    position: relative;
-  }
-
   @media only screen and (min-width: $desktop-lg) {
     padding-right: 25rem;
   }
@@ -425,32 +420,44 @@ a {
       position: relative;
 
       @media only screen and (max-width: $tablet-land-sm) {
-        justify-content: center;
+        display: block;
+        margin: 0 auto;
       }
 
 
       .btn {
-          background-color: $color-primary;
-          border: none;
-          color: white;
-          padding: 1rem 1rem;
-          font-size: 1.6rem;
-          font-weight: 400;
-          cursor: pointer;
-          display: flex;
-          border-radius: .3rem;
-          width: 90%;
-          transition: background-color .2s;
-          position: absolute;
+        background-color: $color-primary;
+        border: none;
+        color: white;
+        padding: .9rem .9rem;
+        font-size: 1.6rem;
+        font-weight: 400;
+        cursor: pointer;
+        display: flex;
+        border-radius: .3rem;
+        width: 90%;
+        transition: background-color .2s;
+        position: absolute;
 
           @media only screen and (max-width: $tablet-land-sm) {
             width: 20rem;
-            padding: 1.5rem 1.5rem;
+            padding: 1rem 1rem;
+            position: relative;
+            float: right;
+            margin-right: 1rem;
           }
       }
 
+      .btn2 {
+        @media only screen and (max-width: $tablet-land-sm) {
+          float: left;
+          margin-right: 0rem;
+          margin-left: 1rem;
+        }
+      }
+
       .btn:hover {
-          background-color: $color-primary-dark;
+        background-color: $color-primary-dark;
       }
 
       .plus {
@@ -517,8 +524,8 @@ table {
 
 	thead tr {
 		position: absolute;
-		top: -9999px;
-		left: -9999px;
+		top: -999rem;
+		left: -999rem;
 	}
 
 	tr {
@@ -576,86 +583,76 @@ table {
 // DROPDOWN
 
 .dropdown {
-  position: absolute;
-
-  @media only screen and (max-width: $tablet-land-sm) {
-    display: none;
-  }
-
-  &__items {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 12rem;
-    z-index: 1000;
-  }
-
-  &__item {
-    background: #f6f6f6;
-    color: #000;
-    border-bottom: .1rem solid #ccc;
-  }
-
-  &__link {
     display: block;
-    color: #000 !important;
-    background: #fff !important;
+    font-size: 1.6rem;
+    font-weight: 400;
 
-    &:hover {
-      display: block;
-      background: $color-grey-light !important;
+    @media only screen and (max-width: $tablet-land-sm) {
+      margin: 0 auto;
     }
-  }
 
-  &__drop {
-    font-weight: bold;
-    float: left;
-    width: 12rem;
-    position: relative;
-    background: $color-white;
-    border: .1rem solid $color-grey;
-
-    &__link {
+    &__button {
       position: relative;
+      margin-right: 2rem;
+      border: .1rem solid $color-grey;
+      transition: border-color .2s;
 
-      // ARROW
-
-      &:after {
-        content:"";
-        position: absolute;
-        right: 1rem;
-        top: 45%;
-        border-left: .5rem solid transparent;
-        border-top: .5rem solid;
-        border-right: .5rem solid transparent;
-        z-index: 999;
-      }
-
-      &:hover:after{
-        content:"";
-        border-left: .5rem solid transparent;
-        border-right: .5rem solid transparent;
+      &:hover {
+        border-color: black;
       }
     }
-  }
+
+    &__menu {
+      display: none;
+      position: absolute;
+      left: 0;
+      padding: 0;
+      margin: 0;
+      margin-top: .5rem;
+      text-align: left;
+      height: 15rem;
+      overflow-y: scroll;
+      border: .1rem solid $color-grey;
+      z-index: 1;
+
+      a {
+        width: 15rem;
+      }
+
+      &.active {
+        display: block;
+      }
+    }
+
+    li {
+      display: inline-block;
+      list-style: none;
+
+      a {
+        display: block;
+        color: #333;
+        background-color: #fff;
+        padding: .8rem 3.5rem .8rem 1rem;
+        text-decoration: none;
+
+        &:hover:not(.dropdown__toggle) {
+          background-color: $color-grey-light;
+        }
+
+        span {
+          display: inline-block;
+          margin-left: .5rem;
+          font-size: 1rem;
+          color: #999;
+        }
+      }
+    }
 }
 
-.edit {
-  display: block;
-  padding: .8rem 1rem;
-  color: #000;
-  position: relative;
-  z-index: 2000;
-
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 1.6rem;
-
-  &:hover, &.hover {
-    background: $color-grey-light;
-    position: relative;
-  }
+.arr {
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
 }
 
 .range {
@@ -671,10 +668,6 @@ table {
 
 .submit-box {
   margin-top: .5rem;
-}
-
-.navv {
-  display: none;
 }
 
 

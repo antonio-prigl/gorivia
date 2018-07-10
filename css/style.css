@@ -274,9 +274,6 @@ a {
 .dropdowns {
   display: flex;
   flex: 3; }
-  .dropdowns__box {
-    flex: 1;
-    position: relative; }
   @media only screen and (min-width: 100em) {
     .dropdowns {
       padding-right: 25rem; } }
@@ -291,12 +288,13 @@ a {
     position: relative; }
     @media only screen and (max-width: 60.625em) {
       .buttons__box {
-        justify-content: center; } }
+        display: block;
+        margin: 0 auto; } }
     .buttons__box .btn {
       background-color: #7F60FD;
       border: none;
       color: white;
-      padding: 1rem 1rem;
+      padding: .9rem .9rem;
       font-size: 1.6rem;
       font-weight: 400;
       cursor: pointer;
@@ -308,7 +306,15 @@ a {
       @media only screen and (max-width: 60.625em) {
         .buttons__box .btn {
           width: 20rem;
-          padding: 1.5rem 1.5rem; } }
+          padding: 1rem 1rem;
+          position: relative;
+          float: right;
+          margin-right: 1rem; } }
+    @media only screen and (max-width: 60.625em) {
+      .buttons__box .btn2 {
+        float: left;
+        margin-right: 0rem;
+        margin-left: 1rem; } }
     .buttons__box .btn:hover {
       background-color: #3C39D8; }
     .buttons__box .plus {
@@ -349,8 +355,8 @@ table {
     display: block; }
   thead tr {
     position: absolute;
-    top: -9999px;
-    left: -9999px; }
+    top: -999rem;
+    left: -999rem; }
   td {
     border: none;
     position: relative;
@@ -427,63 +433,56 @@ table {
     margin-left: -.6rem; } }
 
 .dropdown {
-  position: absolute; }
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 400; }
   @media only screen and (max-width: 60.625em) {
     .dropdown {
-      display: none; } }
-  .dropdown__items {
+      margin: 0 auto; } }
+  .dropdown__button {
+    position: relative;
+    margin-right: 2rem;
+    border: 0.1rem solid #B5B5B5;
+    transition: border-color .2s; }
+    .dropdown__button:hover {
+      border-color: black; }
+  .dropdown__menu {
     display: none;
     position: absolute;
-    top: 0;
     left: 0;
-    width: 12rem;
-    z-index: 1000; }
-  .dropdown__item {
-    background: #f6f6f6;
-    color: #000;
-    border-bottom: .1rem solid #ccc; }
-  .dropdown__link {
-    display: block;
-    color: #000 !important;
-    background: #fff !important; }
-    .dropdown__link:hover {
+    padding: 0;
+    margin: 0;
+    margin-top: .5rem;
+    text-align: left;
+    height: 15rem;
+    overflow-y: scroll;
+    border: 0.1rem solid #B5B5B5;
+    z-index: 1; }
+    .dropdown__menu a {
+      width: 15rem; }
+    .dropdown__menu.active {
+      display: block; }
+  .dropdown li {
+    display: inline-block;
+    list-style: none; }
+    .dropdown li a {
       display: block;
-      background: #F2F2F2 !important; }
-  .dropdown__drop {
-    font-weight: bold;
-    float: left;
-    width: 12rem;
-    position: relative;
-    background: #fff;
-    border: 0.1rem solid #B5B5B5; }
-    .dropdown__drop__link {
-      position: relative; }
-      .dropdown__drop__link:after {
-        content: "";
-        position: absolute;
-        right: 1rem;
-        top: 45%;
-        border-left: .5rem solid transparent;
-        border-top: .5rem solid;
-        border-right: .5rem solid transparent;
-        z-index: 999; }
-      .dropdown__drop__link:hover:after {
-        content: "";
-        border-left: .5rem solid transparent;
-        border-right: .5rem solid transparent; }
+      color: #333;
+      background-color: #fff;
+      padding: .8rem 3.5rem .8rem 1rem;
+      text-decoration: none; }
+      .dropdown li a:hover:not(.dropdown__toggle) {
+        background-color: #F2F2F2; }
+      .dropdown li a span {
+        display: inline-block;
+        margin-left: .5rem;
+        font-size: 1rem;
+        color: #999; }
 
-.edit {
-  display: block;
-  padding: .8rem 1rem;
-  color: #000;
-  position: relative;
-  z-index: 2000;
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 1.6rem; }
-  .edit:hover, .edit.hover {
-    background: #F2F2F2;
-    position: relative; }
+.arr {
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem; }
 
 .range {
   display: flex;
@@ -496,9 +495,6 @@ table {
 
 .submit-box {
   margin-top: .5rem; }
-
-.navv {
-  display: none; }
 
 @media only screen and (max-width: 48em) {
   .hamburger-nav::after {

@@ -54,8 +54,9 @@ a {
     justify-content: center; }
     @media only screen and (max-width: 80em) {
       .top__left {
-        justify-content: flex-start;
-        margin-left: 2.5rem; } }
+        justify-content: flex-start; }
+        .top__left p {
+          margin-left: 2.5rem; } }
   .top__right {
     flex: 4;
     display: flex;
@@ -72,14 +73,17 @@ a {
 
 .profile-div {
   padding: 0rem 4rem; }
+  @media only screen and (max-width: 80em) {
+    .profile-div {
+      padding: 0rem 2.5rem; } }
+  @media only screen and (max-width: 48em) {
+    .profile-div {
+      display: none; } }
 
 .profile--top {
   border-radius: 50%;
   height: 4rem;
   cursor: pointer; }
-  @media only screen and (max-width: 80em) {
-    .profile--top {
-      display: none; } }
 
 .search {
   width: 18rem;
@@ -141,7 +145,8 @@ a {
         flex: 1; } }
   @media only screen and (max-width: 48em) {
     .nav {
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+      display: none; }
       .nav .navi {
         min-width: 28rem; } }
   .nav__item {
@@ -491,3 +496,17 @@ table {
 
 .submit-box {
   margin-top: .5rem; }
+
+.navv {
+  display: none; }
+
+@media only screen and (max-width: 48em) {
+  .hamburger-nav::after {
+    font-family: fontawesome;
+    content: "\f0c9";
+    color: #fff;
+    font-size: 3rem;
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+    cursor: pointer; } }

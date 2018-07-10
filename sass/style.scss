@@ -123,7 +123,10 @@ a {
 
     @media only screen and (max-width: $tablet-land-lg) {
       justify-content: flex-start;
-      margin-left: 2.5rem;
+
+      p {
+        margin-left: 2.5rem;
+      }
     }
   }
 
@@ -145,16 +148,20 @@ a {
 
 .profile-div {
   padding: 0rem 4rem;
+
+  @media only screen and (max-width: $tablet-land-lg) {
+    padding: 0rem 2.5rem;
+  }
+
+  @media only screen and (max-width: $tablet-port) {
+    display: none;
+  }
 }
 
 .profile--top {
   border-radius: 50%;
   height: 4rem;
   cursor: pointer;
-
-  @media only screen and (max-width: $tablet-land-lg) {
-    display: none;
-  }
 }
 
 .search {
@@ -232,9 +239,9 @@ a {
     }
   }
 
-
   @media only screen and (max-width: $tablet-port) {
     flex-wrap: wrap;
+    display: none;
 
     .navi {
       min-width: 28rem;
@@ -664,4 +671,25 @@ table {
 
 .submit-box {
   margin-top: .5rem;
+}
+
+.navv {
+  display: none;
+}
+
+
+//////////////////
+// HAMBURGER
+
+@media only screen and (max-width: $tablet-port) {
+  .hamburger-nav::after {
+    font-family: fontawesome;
+    content: "\f0c9";
+    color: #fff;
+    font-size: 3rem;
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+    cursor: pointer;
+  }
 }

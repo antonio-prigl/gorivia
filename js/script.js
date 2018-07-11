@@ -40,3 +40,88 @@ jQuery(document).ready(function (e) {
         if (!n.parents().hasClass("dropdown__button")) e(".dropdown__button .dropdown__toggle").removeClass("active");
     })
 });
+
+
+// SIDE MENUS
+
+$(function() {
+
+  var special = ['perspective'];
+
+  $('.dropdowns-mobile a').click(function() {
+
+    var transitionClass = $(this).data('transition');
+
+    if ($.inArray(transitionClass, special) > -1) {
+      $('body').removeClass();
+      $('body').addClass(transitionClass);
+    } else {
+      $('body').removeClass();
+      $('#site-canvas').removeClass();
+      $('#site-canvas').addClass(transitionClass);
+    }
+
+    $('#site-wrapper').toggleClass('show-nav');
+
+    return false;
+
+  });
+
+
+  $('.dropdowns-mobile2 a').click(function() {
+
+    var transitionClass = $(this).data('transition');
+
+    if ($.inArray(transitionClass, special) > -1) {
+      $('body').removeClass();
+      $('body').addClass(transitionClass);
+    } else {
+      $('body').removeClass();
+      $('#site-canvas').removeClass();
+      $('#site-canvas').addClass(transitionClass);
+    }
+
+    $('#site-wrapper').toggleClass('show-nav2');
+
+    return false;
+
+  });
+
+
+
+  $('.dropdowns-mobile-exit a').click(function() {
+
+    var transitionClass = $(this).data('transition');
+
+    if ($.inArray(transitionClass, special) > -1) {
+      $('body').removeClass();
+    } else {
+      $('body').removeClass();
+      $('#site-canvas').removeClass();
+    }
+
+    $('#site-wrapper').toggleClass('show-nav');
+
+    return false;
+
+  });
+
+
+  $('.dropdowns-mobile2-exit a').click(function() {
+
+    var transitionClass = $(this).data('transition');
+
+    if ($.inArray(transitionClass, special) > -1) {
+      $('body').removeClass();
+    } else {
+      $('body').removeClass();
+      $('#site-canvas').removeClass();
+    }
+
+    $('#site-wrapper').toggleClass('show-nav2');
+
+    return false;
+
+  });
+
+});

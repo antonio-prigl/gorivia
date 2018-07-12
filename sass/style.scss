@@ -7,7 +7,7 @@ $color-secondary-light: #3A4049;
 $color-grey: #B5B5B5;
 $color-grey-light: #F2F2F2;
 $color-grey-dark: #727272;
-$color-white: #fff;
+$color-white: #FFF;
 
 
 //////////////////////
@@ -50,6 +50,18 @@ $mobile: 36em; // 400px
   border-right: .1rem solid $color-grey;
   margin-top: -.6rem;
   margin-left: -.6rem;
+}
+
+@mixin button {
+  padding: 1rem 2.35rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: .3rem;
+  text-align: center;
+  width: 10rem;
+  height: 4rem;
+  transition: all .1s ease-out;
 }
 
 
@@ -931,4 +943,329 @@ table {
   width: 2.5rem;
   margin-top: 1.9rem;
   margin-right: .5rem;
+}
+
+///////////////
+// MODALS
+
+@media only screen and (min-width: $mobile) {
+
+  .modal-overlay, .modal-overlay2, .modal-overlay3, .modal-overlay4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: rgba(#000, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    backface-visibility: hidden;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.modal, .modal2, .modal3, .modal4 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  margin: 0 auto;
+  background-color: #fff;
+  width: 60rem;
+  min-height: 56rem;
+  border-radius: .3rem;
+  opacity: 0;
+  overflow-y: auto;
+  visibility: hidden;
+  box-shadow: 0 .2rem 1rem rgba(#000, 0.1);
+  backface-visibility: hidden;
+  transform: scale(1.2);
+  transition: all .3s ease-in-out;
+  z-index: 20;
+
+  @media only screen and (max-width: $mobile) {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .close-modal {
+    position: absolute;
+    cursor: pointer;
+    top: 1.5rem;
+    right: 2.8rem;
+    opacity: 0;
+    backface-visibility: hidden;
+    transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+    transition-delay: .3s;
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  .warn {
+    position: absolute;
+    top: 2.4rem;
+    left: 2.7rem;
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .modal-content {
+    opacity: 0;
+    backface-visibility: hidden;
+    transition: opacity .3s ease-in-out;
+    transition-delay: .3s;
+    padding: 3rem 4rem 0rem 4rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media only screen and (max-width: $mobile) {
+      align-items: center;
+      padding: 0 3rem;
+    }
+
+
+    &__header, &__header2 {
+      font-size: 4.6rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      padding-bottom: .5rem;
+      border-bottom: .1rem solid $color-grey;
+      width: 80%;
+
+      @media only screen and (max-width: $mobile) {
+        width: 100%;
+        font-size: 4rem;
+        text-align: center;
+      }
+    }
+
+    &__header2 {
+      margin-top: 2.5rem;
+      font-size: 3.2rem;
+      border: none;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 1.8rem;
+    }
+
+    &__label {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+
+    .input2, .input3 {
+      width: 100%;
+      margin-bottom: 2rem;
+      border-radius: .3rem;
+      border: .1rem solid $color-grey;
+      height: 3.5rem;
+      padding: 1rem;
+      font-size: 1.6rem;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media only screen and (min-width: $mobile) {
+        justify-content: flex-start;
+      }
+    }
+
+    .flex2 {
+      margin-top: 4rem;
+      display: flex;
+      align-items: space-between;
+    }
+
+    .btn-box1 {
+      flex: 1;
+
+      @media only screen and (max-width: $mobile) {
+        display: none;
+      }
+    }
+
+    .btn-box2 {
+      flex: 1;
+    }
+
+    .btn-1, .btn-2, .btn-4 {
+      position: absolute;
+      right: 17rem;
+      background-color: #fff;
+      border: .2rem solid $color-primary;
+      color: $color-primary;
+      @include button;
+
+      &:hover {
+        color: $color-primary-dark;
+        border-color: $color-primary-dark;
+      }
+    }
+
+    .btn-4 {
+      right: auto;
+      left: 7rem;
+
+      @media only screen and (max-width: 385px) {
+        right: auto;
+        left: 3rem;
+      }
+
+    }
+
+    .btn-2 {
+      @media only screen and (max-width: $mobile) {
+        right: auto;
+        left: 3rem;
+      }
+    }
+
+    .btn-1 {
+      position: relative;
+      right: auto;
+      padding-left: 1.9rem;
+    }
+
+    .btn-3, .btn-5 {
+      position: absolute;
+      right: 3rem;
+      background-color: $color-primary;
+      border: none;
+      color: white;
+      @include button;
+
+      &:hover {
+        background-color: $color-primary-dark;
+      }
+    }
+
+    .btn-5 {
+      background-color: #CE3A3A;
+      right: 7rem;
+
+      &:hover {
+        background-color: #ad3030;
+      }
+
+      @media only screen and (max-width: 385px) {
+        right: 3rem;
+      }
+    }
+
+    .input3 {
+      width: 6rem;
+      margin: initial;
+    }
+
+    .kn {
+      float: left;
+      font-size: 2rem;
+      font-weight: 300;
+      margin-left: .5rem;
+    }
+
+    .margin {
+      margin-bottom: 2rem;
+    }
+
+    .margin .dropdown {
+
+      @media only screen and (max-width: $mobile) {
+        margin: 0;
+      }
+
+      &__button {
+        @media only screen and (max-width: $tablet-land-sm) {
+          margin: 0rem 0rem;
+        }
+
+        @media only screen and (max-width: $mobile) {
+          margin-top: 0;
+          width: 12rem;
+          border: .1rem solid $color-grey;
+        }
+      }
+
+      a {
+        @media only screen and (max-width: $mobile) {
+          padding: 1rem;
+        }
+
+        span {
+          @media only screen and (max-width: $mobile) {
+            margin-top: .1rem;
+          }
+        }
+      }
+
+      &__menu {
+        a {
+          @media only screen and (max-width: $mobile) {
+            width: 11.7rem;
+          }
+        }
+      }
+    }
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+
+    .modal-content {
+      opacity: 1;
+    }
+
+    .close-modal {
+      transform: translateY(1rem);
+      opacity: 1;
+    }
+  }
+}
+
+.modal2 {
+  min-height: 47rem;
+}
+
+.modal4 {
+  width: 40rem;
+  min-height: 26rem;
+}
+
+
+@media only screen and (max-width: $mobile) {
+
+  .modal, .modal2, .modal3, .modal4 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0;
+    transform: scale(1.1);
+    padding: 0 !important;
+  }
+
+  .close-modal {
+    right: 2rem !important;
+  }
 }

@@ -14,7 +14,7 @@ $(document).ready(function(){
 
 
 
-// DROPDOWN
+// DROPDOWNS
 
 jQuery(document).ready(function (e) {
     function t(t) {
@@ -124,4 +124,53 @@ $(function() {
 
   });
 
+});
+
+
+// MODALS
+
+var benzinska = $('.modal-overlay, .modal');
+
+$('.modal-benzinska').click(function(){
+    benzinska.addClass('active');
+});
+
+$('.close-modal').click(function(){
+    benzinska.removeClass('active');
+});
+
+
+
+var gorivo = $('.modal-overlay2, .modal2');
+
+$('.modal-gorivo').click(function(){
+    gorivo.addClass('active');
+});
+
+$('.close-modal').click(function(){
+    gorivo.removeClass('active');
+});
+
+
+
+var edit = $('.modal-overlay3, .modal3');
+
+$('.modal-edit').click(function(){
+    edit.addClass('active');
+});
+
+$('.close-modal').click(function(){
+    edit.removeClass('active');
+});
+
+
+
+var del = $('.modal-overlay4, .modal4');
+
+$('.modal-delete').click(function(){
+    del.addClass('active');
+});
+
+$('.close-modal').click(function(){
+    del.removeClass('active');
 });

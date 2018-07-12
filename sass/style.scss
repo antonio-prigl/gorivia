@@ -9,7 +9,6 @@ $color-grey-light: #F2F2F2;
 $color-grey-dark: #727272;
 $color-white: #FFF;
 
-
 //////////////////////
 // RESPONSIVE
 $desktop-lg: 100em; // 1500px
@@ -17,7 +16,6 @@ $tablet-land-lg: 80em; // 1280px
 $tablet-land-sm: 60.625em; // 970px
 $tablet-port: 48em; // 768px
 $mobile: 36em; // 400px
-
 
 //////////////////////
 // MIXINS
@@ -30,14 +28,14 @@ $mobile: 36em; // 400px
 @mixin icon {
   background-size: 2rem;
   background-repeat: no-repeat;
-  background-position: 3rem 0rem;
-  padding: 0rem 6rem;
+  background-position: 3rem 0;
+  padding: 0 6rem;
 }
 
 @mixin chevron {
-  padding: .6rem 1.6rem;
-  background-size: .8rem;
-  background-position: 1.2rem .85rem;
+  padding: 0.6rem 1.6rem;
+  background-size: 0.8rem;
+  background-position: 1.2rem 0.85rem;
   background-repeat: no-repeat;
 }
 
@@ -45,9 +43,9 @@ $mobile: 36em; // 400px
   font-weight: 500;
   background-color: $color-secondary-light;
   color: $color-white;
-  padding: .7rem 0rem;
+  padding: 0.7rem 0;
   width: 50%;
-  border-right: .1rem solid $color-grey;
+  border-right: 0.1rem solid $color-grey;
   margin-top: -.6rem;
   margin-left: -.6rem;
 }
@@ -57,17 +55,15 @@ $mobile: 36em; // 400px
   font-size: 1.6rem;
   font-weight: 700;
   cursor: pointer;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   text-align: center;
   width: 10rem;
   height: 4rem;
-  transition: all .1s ease-out;
+  transition: all 0.1s ease-out;
 }
-
 
 //////////////////////
 // GENERAL
-
 *,
 *::after,
 *::before {
@@ -93,12 +89,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 input[type=submit] {
-    padding: .5rem 1rem;
-    background: $color-white;
-    border: .1rem solid $color-grey;
-    cursor: pointer;
-    -webkit-border-radius: .2rem;
-    border-radius: .2rem;
+  padding: 0.5rem 1rem;
+  background: $color-white;
+  border: 0.1rem solid $color-grey;
+  cursor: pointer;
+  -webkit-border-radius: 0.2rem;
+  border-radius: 0.2rem;
 }
 
 html {
@@ -122,16 +118,13 @@ a {
 
 .container {
   display: flex;
-
   @media only screen and (max-width: $tablet-land-lg) {
     display: block;
   }
 }
 
-
 //////////////////////
 // TOP BAR
-
 .top {
   display: flex;
   background-color: $color-primary;
@@ -143,7 +136,6 @@ a {
     font-weight: 500;
     color: $color-white;
     @include flex;
-
     @media only screen and (max-width: $tablet-land-lg) {
       justify-content: flex-start;
 
@@ -158,24 +150,20 @@ a {
     @include flex;
     justify-content: flex-end;
     margin-left: 8rem;
-
     @media only screen and (min-width: $desktop-lg) {
       flex: 5;
     }
-
     @media only screen and (max-width: $tablet-land-lg) {
-      margin-left: 0rem;
+      margin-left: 0;
     }
   }
 }
 
 .profile-div {
-  padding: 0rem 4rem;
-
+  padding: 0 4rem;
   @media only screen and (max-width: $tablet-land-lg) {
-    padding: 0rem 2.5rem;
+    padding: 0 2.5rem;
   }
-
   @media only screen and (max-width: $tablet-port) {
     display: none;
   }
@@ -189,46 +177,39 @@ a {
 
 .search {
   width: 18rem;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   border: none;
   font-size: 1.2rem;
-  background-image: url('../img/search.svg');
+  background-image: url("../img/search.svg");
   background-size: 1.3rem;
-  background-position: .8rem .8rem;
+  background-position: 0.8rem 0.8rem;
   background-repeat: no-repeat;
-  padding: .8rem 2rem .8rem 2.8rem;
-
+  padding: 0.8rem 2rem 0.8rem 2.8rem;
   @media only screen and (max-width: $tablet-port) {
     display: none;
   }
 }
 
-
-
-
 //////////////////////
 // SIDEBAR
-
 .side {
   display: flex;
   flex-direction: column;
   flex: 1;
   background-color: $color-secondary;
   height: 100vh;
-
   @media only screen and (max-width: $tablet-land-lg) {
     height: auto;
   }
 
   &__user {
-    border-bottom: .3rem solid $color-secondary-light;
+    border-bottom: 0.3rem solid $color-secondary-light;
     display: flex;
     color: $color-white;
     font-size: 2.4rem;
     font-weight: 300;
     line-height: 2.5rem;
     min-height: 13rem;
-
     @media only screen and (max-width: $tablet-land-lg) {
       display: none;
     }
@@ -251,7 +232,6 @@ a {
 .nav {
   font-size: 1.6rem;
   font-weight: 400;
-
   @media only screen and (max-width: $tablet-land-lg) {
     display: flex;
     flex-direction: row;
@@ -261,11 +241,15 @@ a {
       flex: 1;
     }
   }
-
   @media only screen and (max-width: $tablet-port) {
-    display: none;
-  }
+    display: block;
+    height: 0;
+    transition: all .3s ease-in-out;
 
+    &.active-nav {
+      height: 24rem;
+    }
+  }
   @media only screen and (max-width: $mobile) {
     position: absolute;
     width: 100%;
@@ -273,14 +257,22 @@ a {
     z-index: 20;
   }
 
-
-
   &__item {
     height: 6rem;
     @include flex;
     justify-content: flex-start;
-    transition: background-color .2s;
+    transition: background-color 0.2s;
 
+    @media only screen and (max-width: $tablet-port) {
+      height: 0;
+      opacity: 0;
+      transition: all .3s ease-in-out;
+
+      &.active-nav {
+        height: 6rem;
+        opacity: 1;
+      }
+    }
 
     &--active {
       height: 6rem;
@@ -288,7 +280,20 @@ a {
       justify-content: inherit;
       background-color: $color-primary;
       color: $color-white;
+
+      @media only screen and (max-width: $tablet-port) {
+        height: 0;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+
+        &.active-nav {
+          height: 6rem;
+          opacity: 1;
+        }
+      }
     }
+
+
   }
 
   &__item:hover {
@@ -296,44 +301,43 @@ a {
   }
 
   &__home {
-    background-image: url('../img/home.svg');
+    background-image: url("../img/home.svg");
     @include icon;
 
     &--active {
-      background-image: url('../img/home-active.svg');
+      background-image: url("../img/home-active.svg");
       @include icon;
     }
   }
 
   &__list {
-    background-image: url('../img/list.svg');
+    background-image: url("../img/list.svg");
     @include icon;
 
     &--active {
-      background-image: url('../img/list-active.svg');
+      background-image: url("../img/list-active.svg");
     }
   }
 
   &__admin {
-    background-image: url('../img/edit.svg');
+    background-image: url("../img/edit.svg");
     @include icon;
 
     &--active {
-      background-image: url('../img/edit-active.svg');
+      background-image: url("../img/edit-active.svg");
       @include icon;
     }
   }
 
   &__profile {
-    background-image: url('../img/user.svg');
+    background-image: url("../img/user.svg");
     @include icon;
 
     &--active {
-      background-image: url('../img/user--active.svg');
+      background-image: url("../img/user--active.svg");
       @include icon;
     }
   }
-
 }
 
 .profile--side {
@@ -341,20 +345,16 @@ a {
   height: 8rem;
 }
 
-
 //////////////////////
 // MAIN
-
 .main {
   flex: 4;
   margin: 4rem;
   display: flex;
   flex-direction: column;
-
   @media only screen and (min-width: $desktop-lg) {
     flex: 5;
   }
-
   @media only screen and (max-width: $tablet-land-lg) {
     margin: 2rem;
   }
@@ -362,27 +362,21 @@ a {
   &__top {
     display: flex;
     min-height: 5rem;
-
     @media only screen and (max-width: $tablet-land-sm) {
       flex-direction: column;
       min-height: 10rem;
       margin-bottom: 1rem;
     }
-
     @media only screen and (max-width: $tablet-land-sm) {
       margin-bottom: 1rem;
     }
-
     @media only screen and (max-width: $mobile) {
       height: 10rem;
     }
   }
 
-
-
   ///////////////////////
   // PAGINATION
-
   &__pag {
     display: flex;
     margin-top: 2.5rem;
@@ -391,13 +385,13 @@ a {
 
     a {
       color: black;
-      padding: .6rem 1.2rem;
+      padding: 0.6rem 1.2rem;
       text-decoration: none;
-      border: .1rem solid $color-grey;
-      margin: 0 .6rem;
+      border: 0.1rem solid $color-grey;
+      margin: 0 0.6rem;
       font-size: 1.6rem;
       font-weight: 400;
-      transition: border-color .2s;
+      transition: border-color 0.2s;
 
       &.active {
         background-color: $color-primary;
@@ -410,25 +404,21 @@ a {
     }
 
     .arrow-left {
-      background-image: url('../img/chevron-left.svg');
+      background-image: url("../img/chevron-left.svg");
       @include chevron;
     }
 
     .arrow-right {
-      background-image: url('../img/chevron-right.svg');
+      background-image: url("../img/chevron-right.svg");
       @include chevron;
     }
   }
-
 }
 
 #site-wrapper {
   display: none;
 }
-
-
 @media only screen and (max-width: $mobile) {
-
   #site-wrapper {
     display: block;
     position: absolute;
@@ -443,19 +433,16 @@ a {
     position: relative;
     -webkit-transform: translateX(0);
     transform: translateX(0);
-
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    padding: 0 0;
+    padding: 0;
   }
 
   .show-nav #site-canvas {
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
-
     transform: translate3d(100%, 0, 0);
     -webkit-transform: translate3d(100%, 0, 0);
     z-index: 5;
@@ -464,7 +451,6 @@ a {
   .show-nav2 #site-canvas {
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
-
     transform: translate3d(-100%, 0, 0);
     -webkit-transform: translate3d(-100%, 0, 0);
     z-index: 5;
@@ -478,7 +464,6 @@ a {
     left: -100%;
     background: $color-primary;
     text-align: center;
-
   }
 
   #site-menu-div {
@@ -495,14 +480,11 @@ a {
     right: -100%;
     background: $color-secondary;
     text-align: center;
-
   }
 
   .snappy {
-    -webkit-transition: all 300ms
-    cubic-bezier(.694, .0482, .335, 1);
-    transition: all 300ms
-    cubic-bezier(.694, .0482, .335, 1);
+    -webkit-transition: all 300ms cubic-bezier(.694, .0482, .335, 1);
+    transition: all 300ms cubic-bezier(.694, .0482, .335, 1);
     color: #fff;
   }
 
@@ -523,7 +505,7 @@ a {
     width: 7rem;
     height: 7rem;
     background-color: $color-primary-dark;
-    border-radius: 0 0 0 50% ;
+    border-radius: 0 0 0 50%;
     position: absolute;
     top: 0;
     right: 0;
@@ -548,21 +530,16 @@ a {
     top: 0;
     left: 0;
   }
-
 }
-
 
 //////////////////////
 // DROPDOWNS SECTION
-
 .dropdowns {
   display: flex;
   flex: 3;
-
   @media only screen and (min-width: $desktop-lg) {
     padding-right: 25rem;
   }
-
   @media only screen and (max-width: $mobile) {
     display: none;
   }
@@ -570,81 +547,72 @@ a {
 
 //////////////////////
 // BUTTONS SECTION
-
 .buttons {
   display: flex;
   flex: 2;
-
   @media only screen and (max-width: $mobile) {
     display: none;
   }
 
   &__box {
-      display: flex;
-      flex: 1;
-      justify-content: flex-end;
-      position: relative;
-
-      @media only screen and (max-width: $tablet-land-sm) {
-        display: block;
-        margin: 0 auto;
-      }
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    position: relative;
+    @media only screen and (max-width: $tablet-land-sm) {
+      display: block;
+      margin: 0 auto;
+    }
   }
 }
-
-
 
 .buttons-2 {
   display: flex;
   flex-direction: column;
-  margin: 14rem 0rem;
+  margin: 14rem 0;
 }
-
 
 .btn {
   background-color: $color-primary;
   border: none;
   color: white;
-  padding: .9rem .9rem;
+  padding: 0.9rem;
   font-size: 1.6rem;
   font-weight: 400;
   cursor: pointer;
   display: flex;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   width: 90%;
-  transition: background-color .2s;
+  transition: background-color 0.2s;
   position: absolute;
-
-    @media only screen and (max-width: $tablet-land-sm) {
-      width: 20rem;
-      padding: 1rem 1rem;
-      position: relative;
-      float: right;
-      margin-right: 1rem;
-    }
-
-    @media only screen and (max-width: $mobile) {
-      flex-direction: column;
-      align-items: center;
-      padding: 4rem 0rem;
-      width: 25rem;
-      float: none;
-      margin-right: 0rem;
-      font-weight: 700;
-      font-size: 2.4rem;
-      background-color: $color-secondary-light;
-    }
+  @media only screen and (max-width: $tablet-land-sm) {
+    width: 20rem;
+    padding: 1rem;
+    position: relative;
+    float: right;
+    margin-right: 1rem;
+  }
+  @media only screen and (max-width: $mobile) {
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0;
+    width: 25rem;
+    float: none;
+    margin-right: 0;
+    font-weight: 700;
+    font-size: 2.4rem;
+    background-color: $color-secondary-light;
+  }
 }
 
 .btn2 {
   @media only screen and (max-width: $tablet-land-sm) {
     float: left;
-    margin-right: 0rem;
+    margin-right: 0;
     margin-left: 1rem;
   }
-
   @media only screen and (max-width: $mobile) {
-    margin-left: 0rem;
+    margin-left: 0;
     margin-top: 4rem;
   }
 }
@@ -655,8 +623,7 @@ a {
 
 .plus {
   width: 1.6rem;
-  margin-right: .8rem;
-
+  margin-right: 0.8rem;
   @media only screen and (max-width: $mobile) {
     width: 4.5rem;
     margin-bottom: 2rem;
@@ -664,13 +631,8 @@ a {
   }
 }
 
-
-
-
-
 //////////////////////
 // TABLE
-
 table {
   border-collapse: collapse;
   width: 100%;
@@ -683,9 +645,8 @@ table {
   }
 
   th {
-    background-color: #eee;
     font-weight: bold;
-    border: .1rem solid $color-grey;
+    border: 0.1rem solid $color-grey;
     line-height: 1.5;
     height: 3.5rem;
     width: 10rem;
@@ -706,181 +667,169 @@ table {
   }
 
   td {
-    border: .1rem solid $color-grey;
+    border: 0.1rem solid $color-grey;
     height: 3.5rem;
     text-align: center;
     font-weight: 400;
   }
 }
-
-
-
+//////////////////////
 // TABLE RESPONSIVE
-
 @media only screen and (max-width: $tablet-port) {
-	table, thead, tbody, th, td, tr {
-		display: block;
-	}
-
-	thead tr {
-		position: absolute;
-		top: -999rem;
-		left: -999rem;
-	}
-
-	tr {
-
+  table,
+  tbody,
+  td,
+  th,
+  thead,
+  tr {
+    display: block;
   }
 
-	td {
-		border: none;
-		position: relative;
-		padding-left: 50%;
-    padding-top: .6rem;
+  thead tr {
+    position: absolute;
+    top: -999rem;
+    left: -999rem;
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    padding-top: 0.6rem;
     margin-bottom: -.1rem;
     font-weight: 400;
-	}
+  }
 
-	td:before {
-		position: absolute;
-		top: .6rem;
-		left: .6rem;
-		width: 45%;
-		padding-right: 1rem;
-		white-space: nowrap;
-	}
+  td:before {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    width: 45%;
+    padding-right: 1rem;
+  }
 
-
-	td:nth-of-type(1):before {
+  td:nth-of-type(1):before {
     content: "Mjesto";
     @include table;
   }
-	td:nth-of-type(2):before {
+
+  td:nth-of-type(2):before {
     content: "Benzinska";
     @include table;
   }
-	td:nth-of-type(3):before {
+
+  td:nth-of-type(3):before {
     content: "Gorivo";
     @include table;
   }
-	td:nth-of-type(4):before {
+
+  td:nth-of-type(4):before {
     content: "Cijena";
     @include table;
   }
-	td:nth-of-type(5):before {
+
+  td:nth-of-type(5):before {
     content: "Uredi";
     @include table;
   }
-	td:nth-of-type(6):before {
+
+  td:nth-of-type(6):before {
     content: "Izbriši";
     @include table;
   }
 }
 
-
-
 //////////////////////
 // DROPDOWN
-
 .dropdown {
-    display: block;
-    font-size: 1.6rem;
-    font-weight: 400;
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 400;
+  @media only screen and (max-width: $tablet-land-sm) {
+    margin: 0 auto;
+  }
+  @media only screen and (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14rem;
+  }
 
+  &__button {
+    position: relative;
+    margin-right: 2rem;
+    border: 0.1rem solid $color-grey;
+    transition: border-color 0.2s;
     @media only screen and (max-width: $tablet-land-sm) {
-      margin: 0 auto;
+      margin: 0 1rem;
     }
-
     @media only screen and (max-width: $mobile) {
-      display: flex;
-      flex-direction: column;
-      margin-top: 14rem;
+      margin-right: 0;
+      margin-top: 3rem;
+      border: none;
+      width: 25rem;
     }
 
+    &:hover {
+      border-color: black;
+    }
+  }
 
-    &__button {
-      position: relative;
-      margin-right: 2rem;
-      border: .1rem solid $color-grey;
-      transition: border-color .2s;
+  &__menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    text-align: left;
+    height: 15rem;
+    overflow-y: scroll;
+    border: 0.1rem solid $color-grey;
+    z-index: 1;
+    @media only screen and (max-width: $mobile) {
+      margin-top: 0.3rem;
+    }
 
-      @media only screen and (max-width: $tablet-land-sm) {
-        margin: 0rem 1rem;
-      }
-
+    a {
+      width: 15rem;
       @media only screen and (max-width: $mobile) {
-        margin-right: 0;
-        margin-top: 3rem;
-        border: none;
-        width: 25rem;
-      }
-
-      &:hover {
-        border-color: black;
+        width: 24.8rem;
       }
     }
 
-    &__menu {
-      display: none;
-      position: absolute;
-      left: 0;
-      padding: 0;
-      margin: 0;
-      margin-top: .5rem;
-      text-align: left;
-      height: 15rem;
-      overflow-y: scroll;
-      border: .1rem solid $color-grey;
-      z-index: 1;
+    &.active {
+      display: block;
+    }
+  }
 
+  li {
+    display: inline-block;
+    list-style: none;
+
+    a {
+      display: block;
+      color: #333;
+      background-color: #fff;
+      padding: 0.8rem 3.5rem 0.8rem 1rem;
+      text-decoration: none;
       @media only screen and (max-width: $mobile) {
-        margin-top: .3rem;
+        padding: 2rem;
       }
 
-      a {
-        width: 15rem;
+      &:hover:not(.dropdown__toggle) {
+        background-color: $color-grey-light;
+      }
 
+      span {
+        display: inline-block;
+        margin-left: 0.5rem;
+        font-size: 1rem;
+        color: #999;
         @media only screen and (max-width: $mobile) {
-          width: 24.8rem;
-        }
-      }
-
-      &.active {
-        display: block;
-      }
-    }
-
-    li {
-      display: inline-block;
-      list-style: none;
-
-      a {
-        display: block;
-        color: #333;
-        background-color: #fff;
-        padding: .8rem 3.5rem .8rem 1rem;
-        text-decoration: none;
-
-        @media only screen and (max-width: $mobile) {
-          padding: 2rem;
-        }
-
-        &:hover:not(.dropdown__toggle) {
-          background-color: $color-grey-light;
-        }
-
-        span {
-          display: inline-block;
-          margin-left: .5rem;
-          font-size: 1rem;
-          color: #999;
-
-          @media only screen and (max-width: $mobile) {
-            margin-top: 1rem;
-          }
+          margin-top: 1rem;
         }
       }
     }
+  }
 }
 
 .arr {
@@ -897,17 +846,14 @@ table {
 
 .input {
   width: 4.2rem;
-  padding: .8rem 1rem;
+  padding: 0.8rem 1rem;
 }
 
 .submit-box {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
-
-
 //////////////////
 // HAMBURGER
-
 @media only screen and (max-width: $tablet-port) {
   .hamburger-nav::after {
     font-family: fontawesome;
@@ -936,21 +882,21 @@ table {
 .icon3 {
   width: 2.5rem;
   margin-top: 1.9rem;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 .icon4 {
   width: 2.5rem;
   margin-top: 1.9rem;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
-
 ///////////////
 // MODALS
-
 @media only screen and (min-width: $mobile) {
-
-  .modal-overlay, .modal-overlay2, .modal-overlay3, .modal-overlay4 {
+  .modal-overlay,
+  .modal-overlay2,
+  .modal-overlay3,
+  .modal-overlay4 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -964,7 +910,7 @@ table {
     opacity: 0;
     visibility: hidden;
     backface-visibility: hidden;
-    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 
     &.active {
       opacity: 1;
@@ -973,7 +919,10 @@ table {
   }
 }
 
-.modal, .modal2, .modal3, .modal4 {
+.modal,
+.modal2,
+.modal3,
+.modal4 {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -982,16 +931,15 @@ table {
   background-color: #fff;
   width: 60rem;
   min-height: 56rem;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   opacity: 0;
   overflow-y: auto;
   visibility: hidden;
-  box-shadow: 0 .2rem 1rem rgba(#000, 0.1);
+  box-shadow: 0 0.2rem 1rem rgba(#000, 0.1);
   backface-visibility: hidden;
   transform: scale(1.2);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   z-index: 20;
-
   @media only screen and (max-width: $mobile) {
     align-items: center;
     justify-content: center;
@@ -1004,8 +952,8 @@ table {
     right: 2.8rem;
     opacity: 0;
     backface-visibility: hidden;
-    transition: opacity .3s ease-in-out, transform .3s ease-in-out;
-    transition-delay: .3s;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition-delay: 0.3s;
 
     img {
       width: 2rem;
@@ -1024,27 +972,25 @@ table {
   .modal-content {
     opacity: 0;
     backface-visibility: hidden;
-    transition: opacity .3s ease-in-out;
-    transition-delay: .3s;
-    padding: 3rem 4rem 0rem 4rem;
+    transition: opacity 0.3s ease-in-out;
+    transition-delay: 0.3s;
+    padding: 3rem 4rem 0;
     display: flex;
     flex-direction: column;
     width: 100%;
-
     @media only screen and (max-width: $mobile) {
       align-items: center;
       padding: 0 3rem;
     }
 
-
-    &__header, &__header2 {
+    &__header,
+    &__header2 {
       font-size: 4.6rem;
       font-weight: 300;
       margin-bottom: 3rem;
-      padding-bottom: .5rem;
-      border-bottom: .1rem solid $color-grey;
+      padding-bottom: 0.5rem;
+      border-bottom: 0.1rem solid $color-grey;
       width: 80%;
-
       @media only screen and (max-width: $mobile) {
         width: 100%;
         font-size: 4rem;
@@ -1064,14 +1010,15 @@ table {
     &__label {
       font-size: 2.2rem;
       font-weight: 300;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
 
-    .input2, .input3 {
+    .input2,
+    .input3 {
       width: 100%;
       margin-bottom: 2rem;
-      border-radius: .3rem;
-      border: .1rem solid $color-grey;
+      border-radius: 0.3rem;
+      border: 0.1rem solid $color-grey;
       height: 3.5rem;
       padding: 1rem;
       font-size: 1.6rem;
@@ -1081,7 +1028,6 @@ table {
       display: flex;
       justify-content: center;
       align-items: center;
-
       @media only screen and (min-width: $mobile) {
         justify-content: flex-start;
       }
@@ -1095,7 +1041,6 @@ table {
 
     .btn-box1 {
       flex: 1;
-
       @media only screen and (max-width: $mobile) {
         display: none;
       }
@@ -1105,11 +1050,13 @@ table {
       flex: 1;
     }
 
-    .btn-1, .btn-2, .btn-4 {
+    .btn-1,
+    .btn-2,
+    .btn-4 {
       position: absolute;
       right: 17rem;
       background-color: #fff;
-      border: .2rem solid $color-primary;
+      border: 0.2rem solid $color-primary;
       color: $color-primary;
       @include button;
 
@@ -1122,12 +1069,10 @@ table {
     .btn-4 {
       right: auto;
       left: 7rem;
-
       @media only screen and (max-width: 385px) {
         right: auto;
         left: 3rem;
       }
-
     }
 
     .btn-2 {
@@ -1143,7 +1088,8 @@ table {
       padding-left: 1.9rem;
     }
 
-    .btn-3, .btn-5 {
+    .btn-3,
+    .btn-5 {
       position: absolute;
       right: 3rem;
       background-color: $color-primary;
@@ -1163,7 +1109,6 @@ table {
       &:hover {
         background-color: #ad3030;
       }
-
       @media only screen and (max-width: 385px) {
         right: 3rem;
       }
@@ -1178,7 +1123,7 @@ table {
       float: left;
       font-size: 2rem;
       font-weight: 300;
-      margin-left: .5rem;
+      margin-left: 0.5rem;
     }
 
     .margin {
@@ -1186,20 +1131,18 @@ table {
     }
 
     .margin .dropdown {
-
       @media only screen and (max-width: $mobile) {
         margin: 0;
       }
 
       &__button {
         @media only screen and (max-width: $tablet-land-sm) {
-          margin: 0rem 0rem;
+          margin: 0;
         }
-
         @media only screen and (max-width: $mobile) {
           margin-top: 0;
           width: 12rem;
-          border: .1rem solid $color-grey;
+          border: 0.1rem solid $color-grey;
         }
       }
 
@@ -1210,7 +1153,7 @@ table {
 
         span {
           @media only screen and (max-width: $mobile) {
-            margin-top: .1rem;
+            margin-top: 0.1rem;
           }
         }
       }
@@ -1249,11 +1192,11 @@ table {
   width: 40rem;
   min-height: 26rem;
 }
-
-
 @media only screen and (max-width: $mobile) {
-
-  .modal, .modal2, .modal3, .modal4 {
+  .modal,
+  .modal2,
+  .modal3,
+  .modal4 {
     position: fixed;
     top: 0;
     left: 0;

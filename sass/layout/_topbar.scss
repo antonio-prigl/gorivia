@@ -1,0 +1,88 @@
+.top {
+  display: flex;
+  background-color: $color-primary;
+  height: 7rem;
+
+  &__left {
+    flex: 1;
+    @include flex;
+
+    @media only screen and (max-width: $tablet-land-lg) {
+      justify-content: flex-start;
+    }
+
+    &__brand {
+      font-size: 3.6rem;
+      font-weight: 500;
+      color: $color-white;
+
+      @media only screen and (max-width: $tablet-land-lg) {
+        margin-left: 2.5rem;
+      }
+    }
+
+    @media only screen and (max-width: $tablet-port) {
+      .hamburger {
+        &::after {
+          font-family: fontawesome;
+          content: "\f0c9";
+          color: #fff;
+          font-size: 3rem;
+          position: absolute;
+          top: 2rem;
+          right: 2.5rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__right {
+    flex: 4;
+    @include flex;
+    justify-content: flex-end;
+    margin-left: 8rem;
+
+    @media only screen and (min-width: $desktop-lg) {
+      flex: 5;
+    }
+
+    @media only screen and (max-width: $tablet-land-lg) {
+      margin-left: 0;
+    }
+
+    &__search {
+      width: 18rem;
+      border-radius: 0.3rem;
+      border: none;
+      font-size: 1.2rem;
+      background-image: url("../img/search.svg");
+      background-size: 1.3rem;
+      background-position: 0.8rem 0.8rem;
+      background-repeat: no-repeat;
+      padding: 0.8rem 2rem 0.8rem 2.8rem;
+
+      @media only screen and (max-width: $tablet-port) {
+        display: none;
+      }
+    }
+
+    &__profile {
+      padding: 0 4rem;
+
+      @media only screen and (max-width: $tablet-land-lg) {
+        padding: 0 2.5rem;
+      }
+
+      @media only screen and (max-width: $tablet-port) {
+        display: none;
+      }
+
+      img {
+        border-radius: 50%;
+        height: 4rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

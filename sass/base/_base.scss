@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+::-moz-selection {
+  background: $color-primary;
+  color: $color-white;
+}
+
+::selection {
+  background: $color-primary;
+  color: $color-white;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  
+  @media only screen and (max-width: $tablet-land-lg) {
+    display: block;
+  }
+}

@@ -1,0 +1,121 @@
+.dropdown {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 400;
+
+  @media only screen and (max-width: $tablet-land-sm) {
+    margin: 0 auto;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14rem;
+  }
+
+  li {
+    display: inline-block;
+    list-style: none;
+
+    a {
+      display: block;
+      color: #333;
+      background-color: #fff;
+      padding: 0.8rem 3.5rem 0.8rem 1rem;
+      text-decoration: none;
+      @media only screen and (max-width: $mobile) {
+        padding: 2rem;
+      }
+
+      span {
+        display: inline-block;
+        margin-left: 0.5rem;
+        font-size: 1rem;
+        color: #999;
+        @media only screen and (max-width: $mobile) {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  &__button {
+    position: relative;
+    margin-right: 2rem;
+    border: 0.1rem solid $color-grey;
+    transition: border-color 0.2s;
+
+    @media only screen and (max-width: $tablet-land-sm) {
+      margin: 0 1rem;
+    }
+
+    @media only screen and (max-width: $mobile) {
+      margin-right: 0;
+      margin-top: 3rem;
+      border: none;
+      width: 25rem;
+    }
+
+    &:hover {
+      border-color: black;
+    }
+  }
+
+  &__toggle {
+    &__arr {
+      position: absolute;
+      top: 1.2rem;
+      right: 1rem;
+    }
+  }
+
+  &__menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    text-align: left;
+    height: 15rem;
+    overflow-y: scroll;
+    border: 0.1rem solid $color-grey;
+    z-index: 1;
+
+    @media only screen and (max-width: $mobile) {
+      margin-top: 0.3rem;
+    }
+
+    a {
+      width: 15rem;
+
+      @media only screen and (max-width: $mobile) {
+        width: 24.8rem;
+      }
+
+      &:hover {
+        background-color: $color-grey-light;
+      }
+    }
+
+    &__price {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & div:first-child {
+        input {
+          width: 4.2rem;
+          padding: 0.8rem 1rem;
+        }
+      }
+
+      & div:last-child {
+        margin-top: 0.5rem;
+      }
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+}

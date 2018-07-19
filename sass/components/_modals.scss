@@ -1,0 +1,248 @@
+.overlay {
+  &1, &2, &3, &4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: rgba(#000, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.modal {
+  &1, &2, &3, &4 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    margin: 0 auto;
+    background-color: #fff;
+    width: 60rem;
+    min-height: 56rem;
+    border-radius: 0.3rem;
+    opacity: 0;
+    overflow-y: auto;
+    visibility: hidden;
+    box-shadow: 0 0.2rem 1rem rgba(#000, 0.1);
+    backface-visibility: hidden;
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+    z-index: 20;
+
+    @media only screen and (max-width: $mobile) {
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 0;
+      transform: scale(1.1);
+      padding: 0 !important;
+    }
+
+    &__close {
+      position: absolute;
+      cursor: pointer;
+      top: 1.5rem;
+      right: 2.8rem;
+      opacity: 0;
+      backface-visibility: hidden;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      transition-delay: 0.3s;
+
+      @media only screen and (max-width: $mobile) {
+        right: 2rem !important;
+      }
+
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      &.active {
+        transform: translateY(1rem);
+        opacity: 1;
+      }
+    }
+
+    .warn {
+      position: absolute;
+      top: 2.4rem;
+      left: 2.7rem;
+      width: 2.3rem;
+      height: 2.3rem;
+    }
+
+    &__content {
+      opacity: 0;
+      backface-visibility: hidden;
+      transition: opacity 0.3s ease-in-out;
+      transition-delay: 0.3s;
+      padding: 3rem 4rem 0;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      @media only screen and (max-width: $mobile) {
+        align-items: center;
+        padding: 0 3rem;
+      }
+
+      input[type=number] {
+        @include modal-input;
+        width: 6rem;
+        margin: initial;
+      }
+
+      input[type=text] {
+        @include modal-input;
+      }
+
+      &__header {
+        &1, &2 {
+          font-size: 4.6rem;
+          font-weight: 300;
+          margin-bottom: 3rem;
+          padding-bottom: 0.5rem;
+          border-bottom: 0.1rem solid $color-grey;
+          width: 80%;
+          @media only screen and (max-width: $mobile) {
+            width: 100%;
+            font-size: 4rem;
+            text-align: center;
+          }
+        }
+
+        &2 {
+          margin-top: 2.5rem;
+          font-size: 3.2rem;
+          border: none;
+          text-align: center;
+          width: 100%;
+          margin-bottom: 1.8rem;
+        }
+      }
+
+      &__label {
+        font-size: 2.2rem;
+        font-weight: 300;
+        margin-bottom: 0.5rem;
+      }
+
+      &__dropdown {
+        margin-bottom: 2rem;
+
+        .dropdown {
+          @media only screen and (max-width: $mobile) {
+            margin: 0;
+          }
+
+          &__button {
+            @media only screen and (max-width: $tablet-land-sm) {
+              margin: 0;
+            }
+
+            @media only screen and (max-width: $mobile) {
+              margin-top: 0;
+              width: 12rem;
+              border: 0.1rem solid $color-grey;
+            }
+          }
+
+          a {
+            @media only screen and (max-width: $mobile) {
+              padding: 1rem;
+            }
+
+            span {
+              @media only screen and (max-width: $mobile) {
+                margin-top: 0.1rem;
+              }
+            }
+          }
+
+          &__menu {
+            a {
+              @media only screen and (max-width: $mobile) {
+                width: 11.7rem;
+              }
+            }
+          }
+        }
+      }
+
+      &__kn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media only screen and (min-width: $mobile) {
+          justify-content: flex-start;
+        }
+
+        p {
+          float: left;
+          font-size: 2rem;
+          font-weight: 300;
+          margin-left: 0.5rem;
+        }
+      }
+
+      &__buttons  {
+        margin-top: 4rem;
+        display: flex;
+        align-items: space-between;
+
+        & div:first-child {
+          flex: 1;
+          @media only screen and (max-width: $mobile) {
+            display: none;
+          }
+        }
+
+        & div:last-child, &--del {
+          flex: 1;
+        }
+      }
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &2 {
+    min-height: 47rem;
+  }
+
+  &4 {
+    width: 40rem;
+    min-height: 26rem;
+
+    @media only screen and (max-width: $mobile) {
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1.6rem;
+
+  thead tr {
+    & th:nth-child(n+5) {
+      width: 5rem;
+      background-color: $color-grey-dark;
+    }
+
+    @media only screen and (max-width: $tablet-port) {
+      position: absolute;
+      top: -999rem;
+      left: -999rem;
+    }
+  }
+
+  tr {
+    & + tr {
+      margin-top: 1.5em;
+    }
+  }
+
+  th {
+    font-weight: bold;
+    border: 0.1rem solid $color-grey;
+    line-height: 1.5;
+    height: 3.5rem;
+    width: 10rem;
+    text-align: center;
+    color: $color-white;
+    background-color: $color-secondary;
+    font-weight: 500;
+  }
+
+  td {
+    border: 0.1rem solid $color-grey;
+    height: 3.5rem;
+    text-align: center;
+    font-weight: 400;
+
+    @media only screen and (max-width: $tablet-port) {
+      position: relative;
+      padding-left: 50%;
+      padding-top: 0.6rem;
+      margin-bottom: -.1rem;
+      font-weight: 400;
+
+      &:before {
+        position: absolute;
+        top: 0.6rem;
+        left: 0.6rem;
+        width: 45%;
+        padding-right: 1rem;
+      }
+
+      &:nth-of-type(1):before {
+        content: "Mjesto";
+        @include table;
+      }
+
+      &:nth-of-type(2):before {
+        content: "Benzinska";
+        @include table;
+      }
+
+      &:nth-of-type(3):before {
+        content: "Gorivo";
+        @include table;
+      }
+
+      &:nth-of-type(4):before {
+        content: "Cijena";
+        @include table;
+      }
+
+      &:nth-of-type(5):before {
+        content: "Uredi";
+        @include table;
+      }
+
+      &:nth-of-type(6):before {
+        content: "Izbriši";
+        @include table;
+      }
+    }
+
+    & img {
+      width: 1.8rem;
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: $tablet-port) {
+  table,
+  tbody,
+  td,
+  th,
+  thead,
+  tr {
+    display: block;
+  }
+}

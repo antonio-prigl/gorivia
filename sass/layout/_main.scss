@@ -1,0 +1,103 @@
+.main {
+  flex: 4;
+  margin: 4rem;
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (min-width: $desktop-lg) {
+    flex: 5;
+  }
+
+  @media only screen and (max-width: $tablet-land-lg) {
+    margin: 2rem;
+  }
+
+  &__top {
+    display: flex;
+    min-height: 5rem;
+    @media only screen and (max-width: $tablet-land-sm) {
+      flex-direction: column;
+      min-height: 10rem;
+      margin-bottom: 1rem;
+    }
+    @media only screen and (max-width: $tablet-land-sm) {
+      margin-bottom: 1rem;
+    }
+    @media only screen and (max-width: $mobile) {
+      height: 10rem;
+    }
+
+    &__dropdowns {
+      display: flex;
+      flex: 3;
+      @media only screen and (min-width: $desktop-lg) {
+        padding-right: 25rem;
+      }
+      @media only screen and (max-width: $mobile) {
+        display: none;
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      flex: 2;
+      @media only screen and (max-width: $mobile) {
+        display: none;
+      }
+
+      &--canvas {
+        display: flex;
+        flex-direction: column;
+        margin: 14rem 0;
+      }
+
+      &__box {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        position: relative;
+        @media only screen and (max-width: $tablet-land-sm) {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  &__pag {
+    display: flex;
+    margin-top: 2.5rem;
+    justify-content: center;
+    z-index: 2;
+
+    a {
+      color: black;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border: 0.1rem solid $color-grey;
+      margin: 0 0.6rem;
+      font-size: 1.6rem;
+      font-weight: 400;
+      transition: border-color 0.2s;
+
+      &.active {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+
+      &:hover:not(.active) {
+        border-color: $color-primary;
+      }
+
+      &:first-child {
+        background-image: url("../img/chevron-left.svg");
+        @include chevron;
+      }
+
+      &:last-child {
+        background-image: url("../img/chevron-right.svg");
+        @include chevron;
+      }
+    }
+  }
+}

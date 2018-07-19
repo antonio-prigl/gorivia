@@ -1,0 +1,79 @@
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin icon {
+  background-size: 2rem;
+  background-repeat: no-repeat;
+  background-position: 3rem 0;
+  padding: 0 6rem;
+}
+
+@mixin chevron {
+  padding: 0.6rem 1.6rem;
+  background-size: 0.8rem;
+  background-position: 1.2rem 0.85rem;
+  background-repeat: no-repeat;
+}
+
+@mixin table {
+  font-weight: 500;
+  background-color: $color-secondary-light;
+  color: $color-white;
+  padding: 0.7rem 0;
+  width: 50%;
+  border-right: 0.1rem solid $color-grey;
+  margin-top: -.6rem;
+  margin-left: -.6rem;
+}
+
+@mixin button {
+  padding: 1rem 2.35rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  text-align: center;
+  width: 10rem;
+  height: 4rem;
+  transition: all 0.1s ease-out;
+}
+
+@mixin modal-input {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 0.3rem;
+  border: 0.1rem solid $color-grey;
+  height: 3.5rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+
+@mixin modal-button-outline {
+  position: absolute;
+  right: 17rem;
+  background-color: #fff;
+  border: 0.2rem solid $color-primary;
+  color: $color-primary;
+  @include button;
+
+  &:hover {
+    color: $color-primary-dark;
+    border-color: $color-primary-dark;
+  }
+}
+
+@mixin modal-button-fill {
+  position: absolute;
+  right: 3rem;
+  background-color: $color-primary;
+  border: none;
+  color: white;
+  @include button;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}

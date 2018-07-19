@@ -6,30 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gorivia</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,900" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
-  <div id="site-wrapper">
-    <div id="site-canvas">
-      <div id="site-menu">
+  <div class="wrapper">
+    <div class="canvas">
+      <div class="canvas__content">
 
-        <div class="dropdowns-mobile-exit">
-          <a href="#" data-transition="snappy" id="left">
-            <div class="left-exit">
-              <img src="img/x2.svg" alt="x" class="icon3" />
+        <div class="canvas-close__dropdowns">
+          <a href="#" data-transition="snappy">
+            <div class="btn--dropdowns--exit">
+              <img src="img/x2.svg" alt="x" />
             </div>
           </a>
         </div>
 
-        <div id="site-menu-div">
+        <div class="canvas__content__div">
           <ul class="dropdown">
             <li class="dropdown__button">
               <a href="javascript:void(0)" class="dropdown__toggle">
-                  Mjesto <span class="arr">&#9660;</span>
-                </a>
+                Mjesto <span class="dropdown__toggle__arr">&#9660;</span>
+              </a>
               <ul class="dropdown__menu">
                 <li>
                   <a href="#">
@@ -73,11 +73,10 @@
                 </li>
               </ul>
             </li>
-            <li>
 
               <li class="dropdown__button">
                 <a href="javascript:void(0)" class="dropdown__toggle">
-                  Benzinska <span class="arr">&#9660;</span>
+                  Benzinska <span class="dropdown__toggle__arr">&#9660;</span>
                 </a>
                 <ul class="dropdown__menu">
                   <li>
@@ -125,7 +124,7 @@
 
               <li class="dropdown__button">
                 <a href="javascript:void(0)" class="dropdown__toggle">
-                  Gorivo <span class="arr">&#9660;</span>
+                  Gorivo <span class="dropdown__toggle__arr">&#9660;</span>
                 </a>
                 <ul class="dropdown__menu">
                   <li>
@@ -174,7 +173,7 @@
 
               <li class="dropdown__button">
                 <a href="javascript:void(0)" class="dropdown__toggle">
-                  Cijena <span class="arr">&#9660;</span>
+                  Cijena <span class="dropdown__toggle__arr">&#9660;</span>
                 </a>
                 <ul class="dropdown__menu">
                   <li>
@@ -189,13 +188,13 @@
                   </li>
                   <li>
                     <a href="#">
-                      <div class="range">
+                      <div class="dropdown__menu__price">
                         <div class="input-box">
-                          <input type="number" placeholder="Od" class="input">
-                          <input type="number" placeholder="Do" class="input">
+                          <input type="number" placeholder="Od">
+                          <input type="number" placeholder="Do">
                         </div>
                         <div class="submit-box">
-                          <input type="submit" class="submit">
+                          <input type="submit">
                         </div>
                       </div>
                     </a>
@@ -203,50 +202,45 @@
                 </ul>
               </li>
           </ul>
-
-
-
-
         </div>
-
       </div>
 
-      <div id="site-menu2">
+      <div class="canvas__content--alt">
 
-        <div class="dropdowns-mobile2-exit">
-          <a href="#" data-transition="snappy" id="right">
-            <div class="right-exit">
-              <img src="img/x2.svg" alt="x" class="icon4" />
+        <div class="canvas-close__buttons">
+          <a href="#" data-transition="snappy">
+            <div class="btn--buttons--exit">
+              <img src="img/x2.svg" alt="x" />
             </div>
           </a>
         </div>
 
-        <div id="site-menu-div">
-          <div class="buttons-2">
-            <div class="buttons-2__box">
-              <button class="btn modal-benzinska"><img src="img/plus.svg" alt="plus" class="plus" />Dodaj Benzinsku</button>
+        <div class="canvas__content__div">
+          <div class="main__top__buttons--canvas">
+            <div class="main__top__buttons__box">
+              <button class="btn--benzinska modal-benzinska"><img src="img/plus.svg" alt="plus" />Dodaj Benzinsku</button>
             </div>
-            <div class="buttons-2__box">
-              <button class="btn btn2 modal-gorivo"><img src="img/plus.svg" alt="plus" class="plus" />Dodaj Gorivo</button>
+            <div class="main__top__buttons__box">
+              <button class="btn--benzinska btn--gorivo modal-gorivo"><img src="img/plus.svg" alt="plus" />Dodaj Gorivo</button>
             </div>
           </div>
         </div>
 
       </div>
 
-      <div id="drop">
-        <div class="dropdowns-mobile">
-          <a href="#" data-transition="snappy" id="left">
-            <div class="left-button">
-              <img src="img/cog2.svg" alt="cog" class="icon1" />
+      <div class="canvas-open">
+        <div class="canvas-open__dropdowns">
+          <a href="#" data-transition="snappy">
+            <div class="btn--dropdowns">
+              <img src="img/cog2.svg" alt="cog" />
             </div>
           </a>
         </div>
 
-        <div class="dropdowns-mobile2">
-          <a href="#" data-transition="snappy" id="right">
-            <div class="right-button">
-              <img src="img/plus.svg" alt="plus" class="icon2" />
+        <div class="canvas-open__buttons">
+          <a href="#" data-transition="snappy">
+            <div class="btn--buttons">
+              <img src="img/plus.svg" alt="plus" />
             </div>
           </a>
         </div>
@@ -258,71 +252,69 @@
   <div class="top">
 
     <div class="top__left">
-      <p>Gorivia</p>
-      <a class="hamburger-nav"></a>
+      <p class="top__left__brand">Gorivia</p>
+      <a class="hamburger"></a>
     </div>
 
     <div class="top__right">
       <div>
-        <input type="text" class="search" name="search" placeholder="Traži..">
+        <input type="text" class="top__right__search" name="search" placeholder="Traži..">
       </div>
-      <div class="profile-div">
-        <img src="img/profile.png" alt="profile" class="profile--top" />
+      <div class="top__right__profile">
+        <img src="img/profile.png" alt="profile" />
       </div>
     </div>
   </div>
+
   <div class="container">
     <div class="side">
       <div class="side__user">
-        <div class="side__user-left">
-          <img src="img/profile.png" alt="profile-side" class="profile--side" />
+        <div class="side__user__left">
+          <img src="img/profile.png" alt="profile-side" />
         </div>
-        <div class="side__user-right">
+        <div class="side__user__right">
           <p>
             Jane <br /> Holsten
           </p>
         </div>
       </div>
       <div class="side__nav">
-        <nav>
           <ul class="nav">
-            <a href="index.html" class="navi">
+            <a href="index.html" class="nav__link">
               <li class="nav__item">
-                <div class="nav__home" />
+                <div class="nav__item__home">
                 <p>Home</p>
               </li>
             </a>
-            <a href="list.html" class="navi">
+            <a href="list.html" class="nav__link">
               <li class="nav__item--active">
-                <div class="nav__list nav__list--active" />
+                <div class="nav__item__list nav__item__list--active">
                 <p>Lista</p>
               </li>
             </a>
-            <a href="admin.html" class="navi">
+            <a href="admin.html" class="nav__link">
               <li class="nav__item">
-                <div class="nav__admin" />
+                <div class="nav__item__admin">
                 <p>Administracija</p>
               </li>
             </a>
-            <a href="profile.html" class="navi">
+            <a href="profile.html" class="nav__link">
               <li class="nav__item">
-                <div class="nav__profile" />
+                <div class="nav__item__profile">
                 <p>Profil</p>
               </li>
             </a>
           </ul>
-        </nav>
       </div>
     </div>
 
-
     <div class="main">
       <div class="main__top">
-        <div class="dropdowns">
+        <div class="main__top__dropdowns">
           <ul class="dropdown">
             <li class="dropdown__button">
               <a href="javascript:void(0)" class="dropdown__toggle">
-                  Mjesto <span class="arr">&#9660;</span>
+                  Mjesto <span class="dropdown__toggle__arr">&#9660;</span>
                 </a>
               <ul class="dropdown__menu">
                 <li>
@@ -372,7 +364,7 @@
 
               <li class="dropdown__button">
                 <a href="javascript:void(0)" class="dropdown__toggle">
-                  Benzinska <span class="arr">&#9660;</span>
+                  Benzinska <span class="dropdown__toggle__arr">&#9660;</span>
                 </a>
                 <ul class="dropdown__menu">
                   <li>
@@ -421,7 +413,7 @@
 
               <li class="dropdown__button">
                 <a href="javascript:void(0)" class="dropdown__toggle">
-                  Gorivo <span class="arr">&#9660;</span>
+                  Gorivo <span class="dropdown__toggle__arr">&#9660;</span>
                 </a>
                 <ul class="dropdown__menu">
                   <li>
@@ -470,7 +462,7 @@
 
               <li class="dropdown__button">
                 <a href="javascript:void(0)" class="dropdown__toggle">
-                  Cijena <span class="arr">&#9660;</span>
+                  Cijena <span class="dropdown__toggle__arr">&#9660;</span>
                 </a>
                 <ul class="dropdown__menu">
                   <li>
@@ -485,13 +477,13 @@
                   </li>
                   <li>
                     <a href="#">
-                      <div class="range">
-                        <div class="input-box">
-                          <input type="number" placeholder="Od" class="input">
-                          <input type="number" placeholder="Do" class="input">
+                      <div class="dropdown__menu__price">
+                        <div>
+                          <input type="number" placeholder="Od">
+                          <input type="number" placeholder="Do">
                         </div>
-                        <div class="submit-box">
-                          <input type="submit" class="submit">
+                        <div>
+                          <input type="submit">
                         </div>
                       </div>
                     </a>
@@ -502,12 +494,12 @@
         </div>
 
 
-        <div class="buttons">
-          <div class="buttons__box">
-            <button class="btn modal-benzinska"><img src="img/plus.svg" alt="plus" class="plus" />Dodaj Benzinsku</button>
+        <div class="main__top__buttons">
+          <div class="main__top__buttons__box">
+            <button class="btn--benzinska modal-benzinska"><img src="img/plus.svg" alt="plus" />Dodaj Benzinsku</button>
           </div>
-          <div class="buttons__box">
-            <button class="btn btn2 modal-gorivo"><img src="img/plus.svg" alt="plus" class="plus" />Dodaj Gorivo</button>
+          <div class="main__top__buttons__box">
+            <button class="btn--benzinska btn--gorivo modal-gorivo"><img src="img/plus.svg" alt="plus" />Dodaj Gorivo</button>
           </div>
         </div>
       </div>
@@ -515,14 +507,14 @@
 
       <div class="main__table">
         <table>
-          <thead class="head">
+          <thead>
             <tr>
               <th>Mjesto</th>
               <th>Benzinska</th>
               <th>Gorivo</th>
               <th>Cijena</th>
-              <th class="short">Uredi</th>
-              <th class="short">Izbriši</th>
+              <th>Uredi</th>
+              <th>Izbriši</th>
             </tr>
           </thead>
           <tbody>
@@ -531,181 +523,181 @@
               <td>INA</td>
               <td>Eurodiesel BS</td>
               <td>9,95 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Zagreb</td>
               <td>Tifon</td>
               <td>Autoplin</td>
               <td>10,25 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Zadar</td>
               <td>Lukoil</td>
               <td>Eurodiesel BS 95</td>
               <td>10,15 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Dubrovnik</td>
               <td>Crodux</td>
               <td>Autoplin</td>
               <td>10,13 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Osijek</td>
               <td>INA</td>
               <td>Eurodiesel BS</td>
               <td>9,95 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Zagreb</td>
               <td>Tifon</td>
               <td>Autoplin</td>
               <td>10,25 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Zadar</td>
               <td>Lukoil</td>
               <td>Eurodiesel BS 95</td>
               <td>10,15 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Dubrovnik</td>
               <td>Crodux</td>
               <td>Autoplin</td>
               <td>10,13 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Osijek</td>
               <td>INA</td>
               <td>Eurodiesel BS</td>
               <td>9,95 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Zagreb</td>
               <td>Tifon</td>
               <td>Autoplin</td>
               <td>10,25 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Zadar</td>
               <td>Lukoil</td>
               <td>Eurodiesel BS 95</td>
               <td>10,15 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Dubrovnik</td>
               <td>Crodux</td>
               <td>Autoplin</td>
               <td>10,13 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Osijek</td>
               <td>INA</td>
               <td>Eurodiesel BS</td>
               <td>9,95 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Zagreb</td>
               <td>Tifon</td>
               <td>Autoplin</td>
               <td>10,25 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Zadar</td>
               <td>Lukoil</td>
               <td>Eurodiesel BS 95</td>
               <td>10,15 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Dubrovnik</td>
               <td>Crodux</td>
               <td>Autoplin</td>
               <td>10,13 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Zadar</td>
               <td>Lukoil</td>
               <td>Eurodiesel BS 95</td>
               <td>10,15 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Dubrovnik</td>
               <td>Crodux</td>
               <td>Autoplin</td>
               <td>10,13 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
             <tr>
               <td>Zadar</td>
               <td>Lukoil</td>
               <td>Eurodiesel BS 95</td>
               <td>10,15 kn</td>
-              <td><img src="img/cog.svg" alt="cog" class="svg modal-edit" /></td>
-              <td><img src="img/trash.svg" alt="trash" class="svg modal-delete" /></td>
+              <td><img src="img/cog.svg" alt="cog" class="modal-edit" /></td>
+              <td><img src="img/trash.svg" alt="trash" class="modal-delete" /></td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="main__pag">
-        <a href="#" class="arrow-left"></a>
+        <a href="#"></a>
         <a class="active" href="#">1</a>
         <a href="#">2</a>
         <a href="#">3</a>
-        <a href="#" class="arrow-right"></a>
+        <a href="#"></a>
       </div>
     </div>
   </div>
 
 
-  <div class="modal-overlay">
-    <div class="modal">
-      <a class="close-modal">
+  <div class="overlay1">
+    <div class="modal1">
+      <a class="modal1__close">
           <img src="img/x.svg" />
-        </a>
-      <div class="modal-content">
-        <h1 class="modal-content__header">Dodaj Benzinsku</h1>
-        <p class="modal-content__label">Mjesto:</p>
-        <div class="margin">
+      </a>
+      <div class="modal1__content">
+        <h1 class="modal1__content__header1">Dodaj Benzinsku</h1>
+        <p class="modal1__content__label">Mjesto:</p>
+        <div class="modal1__content__dropdown">
           <ul class="dropdown">
             <li class="dropdown__button">
               <a href="javascript:void(0)" class="dropdown__toggle">
-                  Zagreb <span class="arr">&#9660;</span>
-                </a>
+                  Zagreb <span class="dropdown__toggle__arr">&#9660;</span>
+              </a>
               <ul class="dropdown__menu">
                 <li>
                   <a href="#">
@@ -752,42 +744,42 @@
           </ul>
         </div>
 
-        <p class="modal-content__label">Benzinska:</p>
-        <input type="text" class="input2">
-        <p class="modal-content__label">Gorivo:</p>
-        <input type="text" class="input2">
-        <p class="modal-content__label">Cijena:</p>
-        <div class="flex">
-          <input type="number" class="input3">
-          <p class="kn">kn</p>
+        <p class="modal1__content__label">Benzinska:</p>
+        <input type="text">
+        <p class="modal1__content__label">Gorivo:</p>
+        <input type="text">
+        <p class="modal1__content__label">Cijena:</p>
+        <div class="modal1__content__kn">
+          <input type="number">
+          <p>kn</p>
         </div>
-        <div class="flex2">
-          <div class="btn-box1">
-            <button class="btn-1">Pregled</button>
+        <div class="modal1__content__buttons">
+          <div>
+            <button class="btn--pregled">Pregled</button>
           </div>
-          <div class="btn-box2">
-            <button class="btn-2">Otkaži</button>
-            <button class="btn-3">Spremi</button>
+          <div>
+            <button class="btn--otkazi">Otkaži</button>
+            <button class="btn--spremi">Spremi</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal-overlay2">
+  <div class="overlay2">
     <div class="modal2">
-      <a class="close-modal">
+      <a class="modal2__close">
           <img src="img/x.svg" />
-        </a>
-      <div class="modal-content">
-        <h1 class="modal-content__header">Dodaj Gorivo</h1>
-        <p class="modal-content__label">Benzinska:</p>
-        <div class="margin">
+      </a>
+      <div class="modal2__content">
+        <h1 class="modal2__content__header1">Dodaj Gorivo</h1>
+        <p class="modal2__content__label">Benzinska:</p>
+        <div class="modal2__content__dropdown">
           <ul class="dropdown">
             <li class="dropdown__button">
               <a href="javascript:void(0)" class="dropdown__toggle">
-                  Crodux <span class="arr">&#9660;</span>
-                </a>
+                  Crodux <span class="dropdown__toggle__arr">&#9660;</span>
+              </a>
               <ul class="dropdown__menu">
                 <li>
                   <a href="#">
@@ -834,20 +826,20 @@
           </ul>
         </div>
 
-        <p class="modal-content__label">Gorivo:</p>
-        <input type="text" class="input2">
-        <p class="modal-content__label">Cijena:</p>
-        <div class="flex">
-          <input type="number" class="input3">
-          <p class="kn">kn</p>
+        <p class="modal2__content__label">Gorivo:</p>
+        <input type="text">
+        <p class="modal2__content__label">Cijena:</p>
+        <div class="modal2__content__kn">
+          <input type="number">
+          <p>kn</p>
         </div>
-        <div class="flex2">
-          <div class="btn-box1">
-            <button class="btn-1">Pregled</button>
+        <div class="modal2__content__buttons">
+          <div>
+            <button class="btn--pregled">Pregled</button>
           </div>
-          <div class="btn-box2">
-            <button class="btn-2">Otkaži</button>
-            <button class="btn-3">Spremi</button>
+          <div>
+            <button class="btn--otkazi">Otkaži</button>
+            <button class="btn--spremi">Spremi</button>
           </div>
         </div>
       </div>
@@ -855,19 +847,19 @@
     </div>
   </div>
 
-  <div class="modal-overlay3">
+  <div class="overlay3">
     <div class="modal3">
-      <a class="close-modal">
+      <a class="modal3__close">
           <img src="img/x.svg" />
-        </a>
-      <div class="modal-content">
-        <h1 class="modal-content__header">Uredi Benzinsku</h1>
-        <p class="modal-content__label">Mjesto:</p>
-        <div class="margin">
+      </a>
+      <div class="modal3__content">
+        <h1 class="modal3__content__header1">Uredi Benzinsku</h1>
+        <p class="modal3__content__label">Mjesto:</p>
+        <div class="modal3__content__dropdown">
           <ul class="dropdown">
             <li class="dropdown__button">
               <a href="javascript:void(0)" class="dropdown__toggle">
-                  Zagreb <span class="arr">&#9660;</span>
+                  Zagreb <span class="dropdown__toggle__arr">&#9660;</span>
                 </a>
               <ul class="dropdown__menu">
                 <li>
@@ -915,22 +907,22 @@
           </ul>
         </div>
 
-        <p class="modal-content__label">Benzinska:</p>
-        <input type="text" class="input2" placeholder="INA">
-        <p class="modal-content__label">Gorivo:</p>
-        <input type="text" class="input2" placeholder="Eurodiesel BS">
-        <p class="modal-content__label" placeholder="9.95">Cijena:</p>
-        <div class="flex">
-          <input type="number" class="input3">
-          <p class="kn">kn</p>
+        <p class="modal3__content__label">Benzinska:</p>
+        <input type="text" placeholder="INA">
+        <p class="modal3__content__label">Gorivo:</p>
+        <input type="text" placeholder="Eurodiesel BS">
+        <p class="modal3__content__label" placeholder="9.95">Cijena:</p>
+        <div class="modal3__content__kn">
+          <input type="number">
+          <p>kn</p>
         </div>
-        <div class="flex2">
-          <div class="btn-box1">
-            <button class="btn-1">Pregled</button>
+        <div class="modal3__content__buttons">
+          <div>
+            <button class="btn--pregled">Pregled</button>
           </div>
-          <div class="btn-box2">
-            <button class="btn-2">Otkaži</button>
-            <button class="btn-3">Spremi</button>
+          <div>
+            <button class="btn--otkazi">Otkaži</button>
+            <button class="btn--spremi">Spremi</button>
           </div>
         </div>
       </div>
@@ -938,17 +930,17 @@
   </div>
 
 
-  <div class="modal-overlay4">
+  <div class="overlay4">
     <div class="modal4">
-      <a class="close-modal">
+      <a class="modal4__close">
           <img src="img/x.svg" />
-        </a>
+      </a>
       <img src="img/warning.svg" class="warn" />
-      <div class="modal-content">
-        <h1 class="modal-content__header2">Jeste li sigurni da želite izbrisati ovu benzinsku?</h1>
-        <div class="btn-box2">
-          <button class="btn-4">Otkaži</button>
-          <button class="btn-5">Izbriši</button>
+      <div class="modal4__content">
+        <h1 class="modal4__content__header2">Jeste li sigurni da želite izbrisati ovu benzinsku?</h1>
+        <div class="modal4__content__buttons--del">
+          <button class="btn--otkazi--del">Otkaži</button>
+          <button class="btn--izbrisi--del">Izbriši</button>
         </div>
       </div>
     </div>

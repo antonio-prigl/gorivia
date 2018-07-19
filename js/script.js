@@ -1,8 +1,8 @@
 // HAMBURGER
-$('.hamburger-nav').click(function() {
-  $(".nav").toggleClass('active-nav');
-  $(".nav__item").toggleClass('active-nav');
-  $(".nav__item--active").toggleClass('active-nav');
+$('.hamburger').click(function() {
+  $(".nav").toggleClass('active');
+  $(".nav__item").toggleClass('active');
+  $(".nav__item--active").toggleClass('active');
 });
 
 
@@ -38,74 +38,74 @@ $(function(e) {
 
 
 // SIDE MENUS
-  $('.dropdowns-mobile a').click(function() {
+  $('.canvas-open__dropdowns a').click(function() {
     var transitionClass = $(this).data('transition');
-    $('#site-canvas').addClass(transitionClass);
-    $('#site-wrapper').toggleClass('show-nav');
+    $('.canvas').addClass(transitionClass);
+    $('.wrapper').toggleClass('left-canvas');
   });
 
 
-  $('.dropdowns-mobile2 a').click(function() {
+  $('.canvas-open__buttons a').click(function() {
     var transitionClass = $(this).data('transition');
-    $('#site-canvas').addClass(transitionClass);
-    $('#site-wrapper').toggleClass('show-nav2');
+    $('.canvas').addClass(transitionClass);
+    $('.wrapper').toggleClass('right-canvas');
   });
 
 
-  $('.dropdowns-mobile-exit a').click(function() {
+  $('.canvas-close__dropdowns a').click(function() {
     var transitionClass = $(this).data('transition');
-    $('#site-canvas').removeClass();
-    $('#site-wrapper').toggleClass('show-nav');
+    $('.canvas').removeClass(transitionClass);
+    $('.wrapper').toggleClass('left-canvas');
   });
 
 
-  $('.dropdowns-mobile2-exit a').click(function() {
+  $('.canvas-close__buttons a').click(function() {
     var transitionClass = $(this).data('transition');
-    $('#site-canvas').removeClass();
-    $('#site-wrapper').toggleClass('show-nav2');
+    $('.canvas').removeClass(transitionClass);
+    $('.wrapper').toggleClass('right-canvas');
   });
 
 
 // MODALS
-var benzinska = $('.modal-overlay, .modal');
+var benzinska = $('.overlay1, .modal1__close, .modal1__content, .modal1');
 
 $('.modal-benzinska').click(function() {
   benzinska.addClass('active');
 });
 
-$('.close-modal').click(function() {
+$('.modal1__close').click(function() {
   benzinska.removeClass('active');
 });
 
 
-var gorivo = $('.modal-overlay2, .modal2');
+var gorivo = $('.overlay2, .modal2__close, .modal2__content, .modal2');
 
 $('.modal-gorivo').click(function() {
   gorivo.addClass('active');
 });
 
-$('.close-modal').click(function() {
+$('.modal2__close').click(function() {
   gorivo.removeClass('active');
 });
 
 
-var edit = $('.modal-overlay3, .modal3');
+var edit = $('.overlay3, .modal3__close, .modal3__content, .modal3');
 
 $('.modal-edit').click(function() {
   edit.addClass('active');
 });
 
-$('.close-modal').click(function() {
+$('.modal3__close').click(function() {
   edit.removeClass('active');
 });
 
 
-var del = $('.modal-overlay4, .modal4');
+var del = $('.overlay4, .modal4__close, .modal4__content, .modal4');
 
 $('.modal-delete').click(function() {
   del.addClass('active');
 });
 
-$('.close-modal').click(function() {
+$('.modal4__close').click(function() {
   del.removeClass('active');
 });

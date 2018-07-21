@@ -222,6 +222,10 @@
         margin-top: 4rem;
         float: left;
 
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+           margin-top: 2.5rem;
+        }
+
         & div:first-child {
           @media only screen and (max-width: $mobile) {
             display: none;

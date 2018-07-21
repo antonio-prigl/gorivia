@@ -133,6 +133,12 @@
 
     right: auto;
     padding-left: 1.9rem;
+
+
+    @-moz-document url-prefix() {
+      padding-left: 1.7rem;
+      padding-top: .7rem;
+    }
   }
 
   &--otkazi {
@@ -141,6 +147,11 @@
     @media only screen and (max-width: $mobile) {
       right: auto;
       left: 3rem;
+    }
+
+    @-moz-document url-prefix() {
+      padding-left: 2.15rem;
+      padding-top: .7rem;
     }
 
     &--del {
@@ -152,11 +163,21 @@
         right: auto;
         left: 3rem;
       }
+
+      @-moz-document url-prefix() {
+        padding-left: 2.15rem;
+        padding-top: .7rem;
+      }
     }
   }
 
   &--spremi {
     @include modal-button-fill;
+
+    @-moz-document url-prefix() {
+      padding-left: 2.15rem;
+      padding-top: .7rem;
+    }
   }
 
   &--izbrisi {
@@ -171,6 +192,11 @@
 
       &:hover {
         background-color: #ad3030;
+      }
+
+      @-moz-document url-prefix() {
+        padding-left: 2.15rem;
+        padding-top: .7rem;
       }
     }
   }

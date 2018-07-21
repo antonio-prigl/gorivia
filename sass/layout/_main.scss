@@ -77,11 +77,19 @@
       &:first-child {
         background-image: url("../img/chevron-left.svg");
         @include chevron;
+
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+           background-image: url("../img/chevron-left.png");
+        }
       }
 
       &:last-child {
         background-image: url("../img/chevron-right.svg");
         @include chevron;
+
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+           background-image: url("../img/chevron-right.png");
+        }
       }
     }
   }

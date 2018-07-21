@@ -166,6 +166,11 @@ a {
     color: #3C39D8;
     border-color: #3C39D8; }
 
+@-moz-document url-prefix() {
+  .btn--pregled {
+    padding-left: 1.7rem;
+    padding-top: .7rem; } }
+
 .btn--otkazi {
   position: absolute;
   right: 17rem;
@@ -188,6 +193,11 @@ a {
     .btn--otkazi {
       right: auto;
       left: 3rem; } }
+
+@-moz-document url-prefix() {
+  .btn--otkazi {
+    padding-left: 2.15rem;
+    padding-top: .7rem; } }
   .btn--otkazi--del {
     position: absolute;
     right: 17rem;
@@ -213,6 +223,11 @@ a {
         right: auto;
         left: 3rem; } }
 
+@-moz-document url-prefix() {
+  .btn--otkazi--del {
+    padding-left: 2.15rem;
+    padding-top: .7rem; } }
+
 .btn--spremi {
   position: absolute;
   right: 3rem;
@@ -230,6 +245,11 @@ a {
   transition: all 0.1s ease-out; }
   .btn--spremi:hover {
     background-color: #3C39D8; }
+
+@-moz-document url-prefix() {
+  .btn--spremi {
+    padding-left: 2.15rem;
+    padding-top: .7rem; } }
 
 .btn--izbrisi--del {
   position: absolute;
@@ -255,6 +275,11 @@ a {
       right: 3rem; } }
   .btn--izbrisi--del:hover {
     background-color: #ad3030; }
+
+@-moz-document url-prefix() {
+  .btn--izbrisi--del {
+    padding-left: 2.15rem;
+    padding-top: .7rem; } }
 
 .btn--dropdowns {
   position: absolute;
@@ -559,6 +584,9 @@ a {
       width: 100%;
       margin-top: 4rem;
       float: left; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .modal1__content__buttons, .modal2__content__buttons, .modal3__content__buttons, .modal4__content__buttons {
+          margin-top: 2.5rem; } }
       @media only screen and (max-width: 36em) {
         .modal1__content__buttons div:first-child, .modal2__content__buttons div:first-child, .modal3__content__buttons div:first-child, .modal4__content__buttons div:first-child {
           display: none; } }
@@ -988,12 +1016,18 @@ table {
         background-size: 0.8rem;
         background-position: 1.2rem 0.85rem;
         background-repeat: no-repeat; }
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          .main__pag a:first-child {
+            background-image: url("../img/chevron-left.png"); } }
       .main__pag a:last-child {
         background-image: url("../img/chevron-right.svg");
         padding: 0.6rem 1.6rem;
         background-size: 0.8rem;
         background-position: 1.2rem 0.85rem;
         background-repeat: no-repeat; }
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          .main__pag a:last-child {
+            background-image: url("../img/chevron-right.png"); } }
 
 .side {
   background-color: #0D1321;
@@ -1073,45 +1107,49 @@ table {
             .side__nav .nav__item--active.active {
               display: block; } }
       .side__nav .nav__item__home {
-        background-image: url("../img/home.svg");
+        background-image: url("../img/home.svg"), url("../img/home.png");
         background-size: 2rem;
         background-repeat: no-repeat;
         background-position: 3rem 0;
         padding: 0 6rem; }
         .side__nav .nav__item__home--active {
-          background-image: url("../img/home-active.svg");
+          background-image: url("../img/home-active.svg"), url("../img/home-active.png");
           background-size: 2rem;
           background-repeat: no-repeat;
           background-position: 3rem 0;
           padding: 0 6rem; }
       .side__nav .nav__item__list {
-        background-image: url("../img/list.svg");
+        background-image: url("../img/list.svg"), url("../img/list.png");
         background-size: 2rem;
         background-repeat: no-repeat;
         background-position: 3rem 0;
         padding: 0 6rem; }
         .side__nav .nav__item__list--active {
-          background-image: url("../img/list-active.svg"); }
+          background-image: url("../img/list-active.svg"), url("../img/list-active.png");
+          background-size: 2rem;
+          background-repeat: no-repeat;
+          background-position: 3rem 0;
+          padding: 0 6rem; }
       .side__nav .nav__item__admin {
-        background-image: url("../img/edit.svg");
+        background-image: url("../img/edit.svg"), url("../img/edit.png");
         background-size: 2rem;
         background-repeat: no-repeat;
         background-position: 3rem 0;
         padding: 0 6rem; }
         .side__nav .nav__item__admin--active {
-          background-image: url("../img/edit-active.svg");
+          background-image: url("../img/edit-active.svg"), url("../img/edit-active.png");
           background-size: 2rem;
           background-repeat: no-repeat;
           background-position: 3rem 0;
           padding: 0 6rem; }
       .side__nav .nav__item__profile {
-        background-image: url("../img/user.svg");
+        background-image: url("../img/user.svg"), url("../img/user.png");
         background-size: 2rem;
         background-repeat: no-repeat;
         background-position: 3rem 0;
         padding: 0 6rem; }
         .side__nav .nav__item__profile--active {
-          background-image: url("../img/user--active.svg");
+          background-image: url("../img/user--active.svg"), url("../img/user--active.png");
           background-size: 2rem;
           background-repeat: no-repeat;
           background-position: 3rem 0;
@@ -1121,11 +1159,12 @@ table {
   background-color: #7F60FD;
   height: 7rem; }
   .top__left__brand {
-    text-align: center;
     margin-top: 1.35rem;
     font-size: 3.6rem;
     font-weight: 500;
-    color: #FFF; }
+    color: #FFF;
+    float: left;
+    margin-left: 3rem; }
     @media only screen and (max-width: 80em) {
       .top__left__brand {
         text-align: left;
@@ -1140,6 +1179,14 @@ table {
       top: 2rem;
       right: 2.5rem;
       cursor: pointer; } }
+  .top__left img {
+    float: left;
+    width: 5rem;
+    margin-top: 1.8rem;
+    margin-left: 1.5rem; }
+    @media only screen and (max-width: 36em) {
+      .top__left img {
+        display: none; } }
   .top__right__search {
     float: right;
     margin-top: 2rem;
@@ -1147,7 +1194,7 @@ table {
     border-radius: 0.3rem;
     border: none;
     font-size: 1.2rem;
-    background-image: url("../img/search.svg");
+    background-image: url("../img/search.svg"), url("../img/search.png");
     background-size: 1.3rem;
     background-position: 0.8rem 0.8rem;
     background-repeat: no-repeat;

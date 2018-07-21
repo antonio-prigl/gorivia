@@ -4,15 +4,16 @@
 
   &__left {
     &__brand {
-      text-align: center;
       margin-top: 1.35rem;
       font-size: 3.6rem;
       font-weight: 500;
       color: $color-white;
+      float: left;
+      margin-left: 3rem;
 
       @media only screen and (max-width: $tablet-land-lg) {
         text-align: left;
-        margin-left: 2rem;    
+        margin-left: 2rem;
       }
     }
 
@@ -30,6 +31,17 @@
         }
       }
     }
+
+    img {
+      float: left;
+      width: 5rem;
+      margin-top: 1.8rem;
+      margin-left: 1.5rem;
+
+      @media only screen and (max-width: $mobile) {
+        display: none;
+      }
+    }
   }
 
   &__right {
@@ -40,7 +52,7 @@
       border-radius: 0.3rem;
       border: none;
       font-size: 1.2rem;
-      background-image: url("../img/search.svg");
+      background-image: url("../img/search.svg"), url("../img/search.png");
       background-size: 1.3rem;
       background-position: 0.8rem 0.8rem;
       background-repeat: no-repeat;

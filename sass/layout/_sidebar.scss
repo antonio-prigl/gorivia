@@ -75,7 +75,6 @@
             opacity: 1;
           }
         }
-
       }
 
       &__item {
@@ -111,40 +110,41 @@
         }
 
         &__home {
-          background-image: url("../img/home.svg");
+          background-image: url("../img/home.svg"), url("../img/home.png");
           @include icon;
 
           &--active {
-            background-image: url("../img/home-active.svg");
+            background-image: url("../img/home-active.svg"), url("../img/home-active.png");
             @include icon;
           }
         }
 
         &__list {
-          background-image: url("../img/list.svg");
+          background-image: url("../img/list.svg"), url("../img/list.png");
           @include icon;
 
           &--active {
-            background-image: url("../img/list-active.svg");
+            background-image: url("../img/list-active.svg"), url("../img/list-active.png");
+            @include icon;
           }
         }
 
         &__admin {
-          background-image: url("../img/edit.svg");
+          background-image: url("../img/edit.svg"), url("../img/edit.png");
           @include icon;
 
           &--active {
-            background-image: url("../img/edit-active.svg");
+            background-image: url("../img/edit-active.svg"), url("../img/edit-active.png");
             @include icon;
           }
         }
 
         &__profile {
-          background-image: url("../img/user.svg");
+          background-image: url("../img/user.svg"), url("../img/user.png");
           @include icon;
 
           &--active {
-            background-image: url("../img/user--active.svg");
+            background-image: url("../img/user--active.svg"), url("../img/user--active.png");
             @include icon;
           }
         }

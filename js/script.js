@@ -1,6 +1,7 @@
 // HAMBURGER
 $('.hamburger').click(function() {
   $(".nav").toggleClass('active');
+  $(".nav__link").toggleClass('active');
   $(".nav__item").toggleClass('active');
   $(".nav__item--active").toggleClass('active');
 });
@@ -38,32 +39,33 @@ $(function(e) {
 
 
 // SIDE MENUS
-  $('.canvas-open__dropdowns a').click(function() {
-    var transitionClass = $(this).data('transition');
-    $('.canvas').addClass(transitionClass);
-    $('.wrapper').toggleClass('left-canvas');
-  });
+$('.open-dropdowns a').click(function() {
+  var transitionClass = $(this).data('transition');
+  $('#canvas').addClass(transitionClass);
+  $('.wrapper').toggleClass('show-nav');
+});
 
 
-  $('.canvas-open__buttons a').click(function() {
-    var transitionClass = $(this).data('transition');
-    $('.canvas').addClass(transitionClass);
-    $('.wrapper').toggleClass('right-canvas');
-  });
+$('.open-buttons a').click(function() {
+  var transitionClass = $(this).data('transition');
+  $('#canvas').addClass(transitionClass);
+  $('.wrapper').toggleClass('show-nav2');
+});
 
 
-  $('.canvas-close__dropdowns a').click(function() {
-    var transitionClass = $(this).data('transition');
-    $('.canvas').removeClass(transitionClass);
-    $('.wrapper').toggleClass('left-canvas');
-  });
+$('.close-dropdowns a').click(function() {
+  var transitionClass = $(this).data('transition');
+  $('#canvas').removeClass();
+  $('.wrapper').toggleClass('show-nav');
+});
 
 
-  $('.canvas-close__buttons a').click(function() {
-    var transitionClass = $(this).data('transition');
-    $('.canvas').removeClass(transitionClass);
-    $('.wrapper').toggleClass('right-canvas');
-  });
+$('.close-buttons a').click(function() {
+  var transitionClass = $(this).data('transition');
+  $('#canvas').removeClass();
+  $('.wrapper').toggleClass('show-nav2');
+});
+
 
 
 // MODALS

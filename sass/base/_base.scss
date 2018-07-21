@@ -20,11 +20,3 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
-
-.container {
-  display: flex;
-  
-  @media only screen and (max-width: $tablet-land-lg) {
-    display: block;
-  }
-}

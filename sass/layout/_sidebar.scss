@@ -1,29 +1,24 @@
 .side {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
   background-color: $color-secondary;
   height: 100vh;
+
   @media only screen and (max-width: $tablet-land-lg) {
     height: auto;
   }
 
   &__user {
     border-bottom: 0.3rem solid $color-secondary-light;
-    display: flex;
-    color: $color-white;
-    font-size: 2.4rem;
-    font-weight: 300;
-    line-height: 2.5rem;
     min-height: 13rem;
+
     @media only screen and (max-width: $tablet-land-lg) {
       display: none;
     }
 
     &__left {
-      flex: 1;
-      @include flex;
+      float: left;
       max-height: 13rem;
+      padding-left: 3rem;
+      padding-top: 2.5rem;
 
       img {
         border-radius: 50%;
@@ -32,10 +27,19 @@
     }
 
     &__right {
-      flex: 1;
-      @include flex;
-      justify-content: flex-start;
+      float: left;
+      color: $color-white;
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 2.5rem;
+      padding-left: 3rem;
       max-height: 13rem;
+      padding-top: 4rem;
+
+      @media only screen and (max-width: $desktop-lg) {
+        padding-left: 1.3rem;
+        font-size: 2.2rem;
+      }
     }
   }
 
@@ -44,16 +48,12 @@
       font-size: 1.6rem;
       font-weight: 400;
 
-      @media only screen and (max-width: $tablet-land-lg) {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-
       @media only screen and (max-width: $tablet-port) {
-        display: block;
+        width: 100%;
+        background-color: $color-secondary;
         height: 0;
         transition: all .3s ease-in-out;
+        z-index: 20;
 
         &.active {
           height: 24rem;
@@ -62,23 +62,9 @@
 
       @media only screen and (max-width: $mobile) {
         position: absolute;
-        width: 100%;
-        background-color: $color-secondary;
-        z-index: 20;
       }
 
       &__link {
-        @media only screen and (max-width: $tablet-land-lg) {
-          flex: 1;
-        }
-      }
-
-      &__item {
-        height: 6rem;
-        @include flex;
-        justify-content: flex-start;
-        transition: background-color 0.2s;
-
         @media only screen and (max-width: $tablet-port) {
           height: 0;
           opacity: 0;
@@ -90,25 +76,36 @@
           }
         }
 
+      }
+
+      &__item {
+        height: 6rem;
+        padding-top: 2.05rem;
+        transition: background-color 0.2s;
+
+        @media only screen and (max-width: $tablet-port) {
+          display: none;
+
+          &.active {
+            display: block;
+          }
+        }
+
         &:hover {
           background-color: $color-secondary-light;
         }
 
         &--active {
           height: 6rem;
-          @include flex;
-          justify-content: inherit;
+          padding-top: 2.05rem;
           background-color: $color-primary;
           color: $color-white;
 
           @media only screen and (max-width: $tablet-port) {
-            height: 0;
-            opacity: 0;
-            transition: all .3s ease-in-out;
+            display: none;
 
             &.active {
-              height: 6rem;
-              opacity: 1;
+              display: block;
             }
           }
         }
@@ -150,7 +147,7 @@
             background-image: url("../img/user--active.svg");
             @include icon;
           }
-        }      
+        }
       }
     }
   }

@@ -1,23 +1,18 @@
 .top {
-  display: flex;
   background-color: $color-primary;
   height: 7rem;
 
   &__left {
-    flex: 1;
-    @include flex;
-
-    @media only screen and (max-width: $tablet-land-lg) {
-      justify-content: flex-start;
-    }
-
     &__brand {
+      text-align: center;
+      margin-top: 1.35rem;
       font-size: 3.6rem;
       font-weight: 500;
       color: $color-white;
 
       @media only screen and (max-width: $tablet-land-lg) {
-        margin-left: 2.5rem;
+        text-align: left;
+        margin-left: 2rem;    
       }
     }
 
@@ -38,20 +33,9 @@
   }
 
   &__right {
-    flex: 4;
-    @include flex;
-    justify-content: flex-end;
-    margin-left: 8rem;
-
-    @media only screen and (min-width: $desktop-lg) {
-      flex: 5;
-    }
-
-    @media only screen and (max-width: $tablet-land-lg) {
-      margin-left: 0;
-    }
-
     &__search {
+      float: right;
+      margin-top: 2rem;
       width: 18rem;
       border-radius: 0.3rem;
       border: none;
@@ -68,10 +52,11 @@
     }
 
     &__profile {
-      padding: 0 4rem;
+      float: right;
+      margin: 1.5rem 3rem 0 3rem;
 
       @media only screen and (max-width: $tablet-land-lg) {
-        padding: 0 2.5rem;
+        margin: 1.5rem 2rem 0 3rem;
       }
 
       @media only screen and (max-width: $tablet-port) {
